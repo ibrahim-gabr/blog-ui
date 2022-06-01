@@ -13,7 +13,11 @@ const Header = () => {
   const isHomePage = router.pathname === "/";
   // #404343
   return (
-    <header className={`${isHomePage ? "bg-[#222222]" : "bg-white"} py-4 `}>
+    <header
+      className={`${
+        isHomePage ? "bg-[#222222]" : "bg-white"
+      } py-4 fixed inset-x-0 top-0 z-50 `}
+    >
       <Container>
         <div className="flex items-center h-16 ">
           <div className="flex justify-between w-full items-end">
