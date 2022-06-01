@@ -4,7 +4,7 @@ import FooterCopyrights from "./FooterCopyrights";
 import { Container } from "../../common/container";
 const Footer = () => {
   return (
-    <div className="flex fixed bottom-0 w-full py-4 ">
+    <div className="flex fixed bottom-0 w-full py-4 bg-white">
       <Container>
         <div className="flex flex-col md:flex-row space-y-4 justify-center md:justify-between items-center md:space-y-0 w-full">
           <div className="order-first md:order-2">
