@@ -2,6 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-.container {
-  @apply px-4 mx-auto max-w-7xl;
+@font-face {
+  font-family: 'DINNextLTW23';
+  src: url('/fonts/DINNextLTW23-Light.eot');
+  src: url('/fonts/DINNextLTW23-Light.woff2') format('woff2'),
+     url('/fonts/DINNextLTW23-Light.woff') format('woff'),
+     url('/fonts/DINNextLTW23-Light.ttf') format('truetype'),
+     url('/fonts/DINNextLTW23-Light.svg#DINNextLTW23-Light') format('svg'),
+     url('/fonts/DINNextLTW23-Light.eot?#iefix') format('embedded-opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DINNextLTW23';
+  src: url('/fonts/DINNextLTW23-Regular.eot');
+  src: url('/fonts/DINNextLTW23-Regular.woff2') format('woff2'),
+     url('/fonts/DINNextLTW23-Regular.woff') format('woff'),
+     url('/fonts/DINNextLTW23-Regular.ttf') format('truetype'),
+     url('/fonts/DINNextLTW23-Regular.svg#DINNextLTW23-Regular') format('svg'),
+     url('/fonts/DINNextLTW23-Regular.eot?#iefix') format('embedded-opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DINNextLTW23';
+  src: url('/fonts/DINNextLTW23-Medium.eot');
+  src: url('/fonts/DINNextLTW23-Medium.woff2') format('woff2'),
+     url('/fonts/DINNextLTW23-Medium.woff') format('woff'),
+     url('/fonts/DINNextLTW23-Medium.ttf') format('truetype'),
+     url('/fonts/DINNextLTW23-Medium.svg#DINNextLTW23-Medium') format('svg'),
+     url('/fonts/DINNextLTW23-Medium.eot?#iefix') format('embedded-opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DINNextLTW23';
+  src: url('/fonts/DINNextLTW23-Bold.eot');
+  src: url('/fonts/DINNextLTW23-Bold.woff2') format('woff2'),
+     url('/fonts/DINNextLTW23-Bold.woff') format('woff'),
+     url('/fonts/DINNextLTW23-Bold.ttf') format('truetype'),
+     url('/fonts/DINNextLTW23-Bold.svg#DINNextLTW23-Bold') format('svg'),
+     url('/fonts/DINNextLTW23-Bold.eot?#iefix') format('embedded-opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    font-family: DINNextLTW23, system-ui, sans-serif;
+  }
 }

@@ -4,7 +4,7 @@ import { AiOutlineMail } from "react-icons/ai";
 
 export const Newsletter = () => {
   return (
-    <Container className="flex flex-col bg-[#F7F7F7] justify-center items-center py-10 space-y-2">
+    <div className="flex flex-col bg-[#F7F7F7] justify-center items-center py-10 space-y-2">
       <span className="text-[#202221] text-lg">اشترك في النشرة البريدية </span>
       <span className="text-sm text-[#808686]">
         كن أول من يعلم عن كل جديد في عالم التجارة الإلكترونية
@@ -36,6 +36,6 @@ export const Newsletter = () => {
           اشتراك
         </button>
       </form>
-    </Container>
+    </div>
   );
 };
