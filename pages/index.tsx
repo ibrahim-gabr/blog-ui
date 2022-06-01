@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { Newsletter } from "../components/layout/Newsletter";
+import { Showcase } from "../components/Shocase";
 
 const Home: NextPage = () => {
   return (
@@ -13,7 +14,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-
+        <Showcase />
       </main>
     </div>
   );
