@@ -1,9 +1,15 @@
 import { MenuIcon } from "@heroicons/react/outline";
-import React from "react";
-
-const BlogHeader = () => {
+import React, { FC } from "react";
+type Props = {
+  isHomePage: boolean;
+};
+const BlogHeader: FC<Props> = ({ isHomePage }) => {
   return (
-    <div className="flex items-end h-7 space-x-4 font-bold text-xl text-white">
+    <div
+      className={`flex items-end h-7 space-x-4 font-bold text-xl ${
+        isHomePage ? "text-white" : "text-[#404343]"
+      }`}
+    >
       <div>
         <MenuIcon className="w-8 h-8 flex sm:hidden text-white ml-6" />
       </div>
