@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { Newsletter } from "../components/layout/Newsletter";
-import { Showcase } from "../components/Shocase";
+import { Showcase } from "../components/Showcase";
 
 const Home: NextPage = () => {
   return (
