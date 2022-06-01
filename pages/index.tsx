@@ -13,7 +13,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <Newsletter />
+
       </main>
     </div>
   );
