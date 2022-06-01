@@ -1,5 +1,6 @@
-import { FC, Fragment } from "react";
-// import Header from './header';
+import { FC } from "react";
+import Header from "./header";
+
 // import Footer from './footer';
 
 type LayoutProps = {
@@ -8,11 +9,11 @@ type LayoutProps = {
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <Fragment>
-      {/* <Header /> */}
+    <>
+      <Header />
       <main className="bg-gray-100">{children}</main>
       {/* <Footer /> */}
-    </Fragment>
+    </>
   );
 };
 
