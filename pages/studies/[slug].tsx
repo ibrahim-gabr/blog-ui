@@ -7,6 +7,7 @@ import { ParsedUrlQuery } from "querystring";
 import { IncomingMessage } from "http";
 import ArticleHeader from "~/components/articles/header";
 import { Post } from "..";
+import { Container } from "~/components/common/container";
 
 export type ArticleProps = {
   articleData: Post;
@@ -15,7 +16,33 @@ export type ArticleProps = {
 
 const StudiesArticle: FC<ArticleProps> = ({ articleData, loading }) => {
   console.log(articleData);
-  return <div>{!loading && <ArticleHeader article={articleData} />}</div>;
+  const postBody = articleData.body;
+  return (
+    <div>
+      {!loading && <ArticleHeader article={articleData} />}
+      <Container className="pt-10 mt-10">
+        {postBody?.mainImage && (
+          <img
+            className="w-full h-[195px] md:h-[428px]"
+            src={postBody?.mainImage}
+            alt={articleData?.title}
+          />
+        )}
+        <div className="flex flex-col space-y-3">
+          {postBody?.sections.map((section) => (
+            <div key={section.title}>
+              <h2 className="text-2xl sm:text-3xl">{section.title}</h2>
+              <div className="flex flex-col space-y-3">
+                {section.content.map((content) => (
+                  <p key={content}>{content}</p>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </div>
+  );
 };
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {

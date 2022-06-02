@@ -18,6 +18,14 @@ export interface Post {
   is_featured: boolean;
   image: string;
   slug: string;
+  body?: {
+    mainImage?: string;
+    sections: Section[];
+  };
+}
+export interface Section {
+  content: string[];
+  title?: string;
 }
 
 export type HomePageProps = {
@@ -67,7 +75,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   } catch (error: any) {
     console.log(error?.response || error);
   }
-  
+
   return {
     props: {
       loading,
