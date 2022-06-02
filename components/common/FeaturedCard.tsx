@@ -7,27 +7,22 @@ type Props = {
 };
 const FeaturedCard: FC<Props> = ({ post }) => {
   return (
-    <div className="flex flex-col space-y-4">
-      <div className="flex justify-center">
+    <div className="flex flex-col space-y-3">
+      <div className="relative flex justify-center h-[350px]">
         <Image
           src={post.image}
-          width={340}
-          height={350}
           alt={post.title}
           objectFit="cover"
+          layout="fill"
         />
       </div>
-      <span className="text-sm text-theme-light-black border-r-2 border-theme-primary pr-2">{post.subcategory}</span>
+      <span className="text-sm text-theme-light-black border-r-2 border-theme-primary pr-2">
+        {post.subcategory}
+      </span>
       <div className="flex flex-col space-y-3">
-        <span className="text-theme-black text-xl">
-          {post.title}
-        </span>
-        <p className="text-theme-gray text-sm">
-          {post.excerpt}
-        </p>
-        <p className="text-theme-light-black text-sm">
-           بواسطه {post.author}
-        </p>
+        <span className="text-theme-black text-xl">{post.title}</span>
+        <p className="text-theme-gray text-sm">{post.excerpt}</p>
+        <p className="text-theme-light-black text-sm">بواسطه {post.author}</p>
       </div>
     </div>
   );

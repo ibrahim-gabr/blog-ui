@@ -29,12 +29,15 @@ const MostRead: FC<Props> = ({ posts }) => {
             .slice(0, 3)
             .map((post) => <CardOverlay key={post.id} post={post} />)}
       </div>
-      {featuredPost && <FeaturedCard post={featuredPost} />}
-      <div className="flex flex-col space-y-6 mt-8">
-        {posts &&
-          posts
-            .slice(4, 7)
-            .map((post) => <CardSideImage key={post.id} post={post} />)}
+
+      <div className="grid grid-cols-1 md:grid-cols-2 mt-6 gap-y-10 gap-x-4  py-8">
+        {featuredPost && <FeaturedCard post={featuredPost} />}
+        <div className="flex flex-col space-y-5 ">
+          {posts &&
+            posts
+              .slice(4, 7)
+              .map((post) => <CardSideImage key={post.id} post={post} />)}
+        </div>
       </div>
     </Container>
   );
