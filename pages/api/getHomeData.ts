@@ -12,25 +12,11 @@ export const posts = [
     category: "التقارير والدراسات",
     subcategory: "أفكار البزنس",
     created_at: "2019-01-30T12:00:00.000Z",
-    id: 1,
-    tags: ["#تسويق", "#استراتيجيات", "#بيع المنتجات"],
-    is_featured: false,
-    image: "/images/posts/1.png",
-    slug:"non-maiores-reiciendis"
-  },
-  {
-    author: "عبدالله عادل",
-    title: " ما هو مستقبل التجارة الإلكترونية ",
-    excerpt:
-      "من المتوقع أن تزيد المبيعات من 1.3 تريليون في عام 2014 إلى 4.5 تريليون في عام 2021",
-    category: "التقارير والدراسات",
-    subcategory: "أفكار البزنس",
-    created_at: "2019-01-30T12:00:00.000Z",
     id: 2,
     tags: ["#تسويق", "#استراتيجيات", "#بيع المنتجات"],
     is_featured: false,
     image: "/images/posts/2.png",
-    slug:"consequatur-facilis-minus"
+    slug: "consequatur-facilis-minus",
   },
   {
     author: "عبدالله عادل",
@@ -44,7 +30,7 @@ export const posts = [
     tags: ["#تسويق", "#استراتيجيات", "#بيع المنتجات"],
     is_featured: false,
     image: "/images/posts/3.png",
-    slug:"sequi-ut-reiciendis"
+    slug: "sequi-ut-reiciendis",
   },
   {
     author: "عبدالله عادل",
@@ -58,7 +44,7 @@ export const posts = [
     tags: ["#تسويق", "#استراتيجيات", "#بيع المنتجات"],
     is_featured: false,
     image: "/images/posts/4.png",
-    slug:"quos-fugiat-illo"
+    slug: "quos-fugiat-illo",
   },
   {
     author: "عبدالله عادل",
@@ -72,7 +58,7 @@ export const posts = [
     tags: ["#تسويق", "#استراتيجيات", "#بيع المنتجات"],
     is_featured: false,
     image: "/images/posts/5.png",
-    slug:"autem-aut-ut"
+    slug: "autem-aut-ut",
   },
   {
     author: "عبدالله عادل",
@@ -86,7 +72,7 @@ export const posts = [
     tags: ["#تسويق", "#استراتيجيات", "#بيع المنتجات"],
     is_featured: false,
     image: "/images/posts/6.png",
-    slug:"alias-facere-sapiente"
+    slug: "alias-facere-sapiente",
   },
   {
     author: "عبدالله عادل",
@@ -100,7 +86,7 @@ export const posts = [
     tags: ["#تسويق", "#استراتيجيات", "#بيع المنتجات"],
     is_featured: false,
     image: "/images/posts/7.png",
-    slug:"ipsum-consequatur-eos"
+    slug: "ipsum-consequatur-eos",
   },
   {
     author: "عبدالله عادل",
@@ -114,7 +100,7 @@ export const posts = [
     tags: ["#تسويق", "#استراتيجيات", "#بيع المنتجات"],
     is_featured: false,
     image: "/images/posts/8.png",
-    slug:"non-non-dignissimos"
+    slug: "non-non-dignissimos",
   },
   {
     author: "عبدالله عادل",
@@ -128,7 +114,7 @@ export const posts = [
     tags: ["#تسويق", "#استراتيجيات", "#بيع المنتجات"],
     is_featured: false,
     image: "/images/posts/9.png",
-    slug:"voluptatem-impedit-ipsam"
+    slug: "voluptatem-impedit-ipsam",
   },
   {
     author: "عبدالله عادل",
@@ -142,7 +128,7 @@ export const posts = [
     tags: ["#تسويق", "#استراتيجيات", "#بيع المنتجات"],
     is_featured: true,
     image: "/images/featured_post.png",
-    slug:"dolorum-tempore-et"
+    slug: "dolorum-tempore-et",
   },
 ];
 
@@ -157,7 +143,7 @@ export interface Post {
   tags: string[];
   is_featured: boolean;
   image: string;
-  slug:string
+  slug: string;
 }
 
 type Data = {
