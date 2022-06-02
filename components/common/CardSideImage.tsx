@@ -8,9 +8,10 @@ type Props = {
 const CardSideImage: FC<Props> = ({ post }) => {
   return (
     <div className="relative flex items-center">
-      <div >
-        <img
-          className="max-w-[150px] h-[150px]"
+      <div className="relative w-[150px] h-[150px] ">
+        <Image
+          layout="fill"
+          objectFit="cover"
           src={post.image}
           alt={post.title}
         />
