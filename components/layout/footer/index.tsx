@@ -6,7 +6,7 @@ import { Newsletter } from "../Newsletter";
 const Footer = () => {
   return (
     <>
-      <div className="flex flex-col fixed bottom-0 w-full  bg-white">
+      <div className="flex flex-col  w-full  bg-white">
       <Newsletter />
         <Container className="py-4">
           <div className="flex flex-col md:flex-row space-y-4 justify-center md:justify-between items-center md:space-y-0 w-full">

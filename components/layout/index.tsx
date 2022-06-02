@@ -10,7 +10,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <div className="flex flex-col">
       <Header />
-      <main className="flex-1 bg-white overflow-y-scroll">{children}</main>
+      <main className="flex-1 bg-white">{children}</main>
       <Footer />
     </div>
   );

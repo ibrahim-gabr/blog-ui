@@ -3,8 +3,7 @@ import { ArrowLeftIcon } from "@heroicons/react/outline";
 
 const MostReadHeader = () => {
   return (
-    <div>
-      {" "}
+    <div className="mb-4">
       <div className="flex justify-between items-center">
         <span className="text-theme-black text-2xl">الأكثر قراءة</span>
 
