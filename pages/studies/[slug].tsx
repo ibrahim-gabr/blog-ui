@@ -20,21 +20,32 @@ const StudiesArticle: FC<ArticleProps> = ({ articleData, loading }) => {
   return (
     <div>
       {!loading && <ArticleHeader article={articleData} />}
-      <Container className="pt-10 mt-10">
+      <Container className="py-10 mt-10">
         {postBody?.mainImage && (
           <img
-            className="w-full h-[195px] md:h-[428px]"
+            className="w-full h-[195px] md:h-[428px] object-cover"
             src={postBody?.mainImage}
             alt={articleData?.title}
           />
         )}
-        <div className="flex flex-col space-y-3">
+        <div className="flex flex-col space-y-7">
           {postBody?.sections.map((section) => (
-            <div key={section.title}>
-              <h2 className="text-2xl sm:text-3xl">{section.title}</h2>
+            <div key={section.id} className="flex flex-col space-y-7 ">
+              <h2 className="text-2xl">{section.title}</h2>
+
+              {section?.image && (
+                <img
+                  className=" h-[195px] md:h-[534px] object-cover"
+                  src={section?.image}
+                  alt={articleData?.title}
+                />
+              )}
+
               <div className="flex flex-col space-y-3">
-                {section.content.map((content) => (
-                  <p key={content}>{content}</p>
+                {section.content.map((content, idx) => (
+                  <p className="text-[#606564] font-normal" key={idx}>
+                    {content}
+                  </p>
                 ))}
               </div>
             </div>

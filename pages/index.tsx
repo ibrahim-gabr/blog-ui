@@ -26,6 +26,8 @@ export interface Post {
 export interface Section {
   content: string[];
   title?: string;
+  id: number;
+  image?: string;
 }
 
 export type HomePageProps = {
