@@ -10,6 +10,8 @@ import MostRead from "~/components/MostRead";
 import CardSideImage from "~/components/common/CardSideImage";
 import { Container } from "~/components/common/container";
 import FeaturedCard from "~/components/common/FeaturedCard";
+import FeaturedPostBody from "~/components/common/FeaturedPostBody";
+import OtherPosts from "~/components/OtherPosts";
 export interface Post {
   author: string;
   title: string;
@@ -47,14 +49,7 @@ const Home: FC<HomePageProps> = ({ homeData, loading }) => {
         <MostRead posts={homeData.most_read} />
 
         {/* other posts */}
-        <Container>
-          <div className="grid grid-cols-1 md:grid-cols-4 mt-6 gap-y-10 gap-x-7  py-8">
-            {homeData.posts &&
-              homeData.posts
-                .slice(0, 4)
-                .map((post) => <FeaturedCard key={post.id} post={post} />)}
-          </div>
-        </Container>
+        <OtherPosts posts={homeData.posts} />
       </main>
     </div>
   );
