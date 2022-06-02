@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 const Header = () => {
   const router = useRouter();
   const isHomePage = router.pathname === "/";
-  // #404343
+
   return (
     <header className={`${isHomePage ? "bg-[#222222]" : "bg-white"} py-4 `}>
       <Container>

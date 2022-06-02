@@ -58,3 +58,6 @@
     font-family: DINNextLTW23, system-ui, sans-serif;
   }
 }
+.active{
+  @apply text-theme-primary border-b-2 border-b-theme-primary
+}

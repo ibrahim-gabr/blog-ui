@@ -11,7 +11,9 @@ const BlogHeader: FC<Props> = ({ isHomePage }) => {
       }`}
     >
       <div>
-        <MenuIcon className="w-8 h-8 flex sm:hidden text-white ml-6" />
+        <MenuIcon
+          className={`w-8 h-8 flex sm:hidden  isHomePage ? "text-white" : "text-[#404343]" ml-6`}
+        />
       </div>
       <div className="leading-7">مدونة</div>
       <div className=" text-3xl">|</div>
