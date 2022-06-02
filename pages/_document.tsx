@@ -6,15 +6,11 @@ import Document, { Head, Main, NextScript, Html } from "next/document";
 
 export default class NextDocument extends Document {
   render() {
-
     return (
       <Html lang="ar" dir="rtl">
         <Head>
           <meta charSet="utf-8" />
-          <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-            rel="stylesheet"
-          />
+
           <link rel="manifest" href="/manifest.json" />
           <meta name="theme-color" content="#90cdf4" />
           <meta name="application-name" content="PWA App" />
