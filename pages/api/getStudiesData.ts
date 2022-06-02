@@ -1,5 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
+import { Post } from "./getHomeData";
 
 const fs = require("fs");
 
@@ -16,6 +17,7 @@ export const posts = [
     tags: ["#تسويق", "#استراتيجيات", "#بيع المنتجات"],
     is_featured: false,
     image: "/images/posts/1.png",
+    slug: "non-maiores-reiciendis",
   },
   {
     author: "عبدالله عادل",
@@ -29,6 +31,7 @@ export const posts = [
     tags: ["#تسويق", "#استراتيجيات", "#بيع المنتجات"],
     is_featured: false,
     image: "/images/posts/2.png",
+    slug: "consequatur-facilis-minus",
   },
   {
     author: "عبدالله عادل",
@@ -42,6 +45,7 @@ export const posts = [
     tags: ["#تسويق", "#استراتيجيات", "#بيع المنتجات"],
     is_featured: false,
     image: "/images/posts/3.png",
+    slug: "sequi-ut-reiciendis",
   },
   {
     author: "عبدالله عادل",
@@ -55,6 +59,7 @@ export const posts = [
     tags: ["#تسويق", "#استراتيجيات", "#بيع المنتجات"],
     is_featured: false,
     image: "/images/posts/4.png",
+    slug: "quos-fugiat-illo",
   },
   {
     author: "عبدالله عادل",
@@ -68,6 +73,7 @@ export const posts = [
     tags: ["#تسويق", "#استراتيجيات", "#بيع المنتجات"],
     is_featured: false,
     image: "/images/posts/5.png",
+    slug: "autem-aut-ut",
   },
   {
     author: "عبدالله عادل",
@@ -81,6 +87,7 @@ export const posts = [
     tags: ["#تسويق", "#استراتيجيات", "#بيع المنتجات"],
     is_featured: false,
     image: "/images/posts/6.png",
+    slug: "alias-facere-sapiente",
   },
   {
     author: "عبدالله عادل",
@@ -94,6 +101,7 @@ export const posts = [
     tags: ["#تسويق", "#استراتيجيات", "#بيع المنتجات"],
     is_featured: false,
     image: "/images/posts/7.png",
+    slug: "ipsum-consequatur-eos",
   },
   {
     author: "عبدالله عادل",
@@ -107,6 +115,7 @@ export const posts = [
     tags: ["#تسويق", "#استراتيجيات", "#بيع المنتجات"],
     is_featured: false,
     image: "/images/posts/8.png",
+    slug: "non-non-dignissimos",
   },
   {
     author: "عبدالله عادل",
@@ -120,21 +129,9 @@ export const posts = [
     tags: ["#تسويق", "#استراتيجيات", "#بيع المنتجات"],
     is_featured: false,
     image: "/images/posts/9.png",
+    slug: "voluptatem-impedit-ipsam",
   },
 ];
-
-export interface Post {
-  author: string;
-  title: string;
-  excerpt: string;
-  category: string;
-  subcategory: string;
-  created_at: string;
-  id: number;
-  tags: string[];
-  is_featured: boolean;
-  image: string;
-}
 
 type Data = {
   most_read: Post[];

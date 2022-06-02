@@ -2,10 +2,11 @@ import React from "react";
 import { GetServerSideProps } from "next";
 import Client from "~/utils/Client";
 import { FC } from "react";
-import { Post } from ".";
 import Image from "next/image";
 import FeaturedPostBody from "~/components/common/FeaturedPostBody";
 import { Container } from "~/components/common/container";
+import { Post } from "..";
+import { useRouter } from "next/router";
 
 export type StudiesPageProps = {
   studiesData: {
@@ -15,6 +16,7 @@ export type StudiesPageProps = {
 };
 
 const Studies: FC<StudiesPageProps> = ({ studiesData, loading }) => {
+  const router = useRouter();
   return (
     <Container>
       <div className="flex items-center justify-center">
@@ -23,7 +25,11 @@ const Studies: FC<StudiesPageProps> = ({ studiesData, loading }) => {
       <div className="flex justify-center items-center flex-wrap gap-7 mt-4 py-4">
         {studiesData.posts &&
           studiesData.posts.map((post) => (
-            <div className="max-w-[343px] md:max-w-[370px]" key={post.id}>
+            <div
+              className="max-w-[343px] md:max-w-[370px]"
+              key={post.id}
+              onClick={() => router.push(`/studies/${post.slug}`)}
+            >
               <div className="flex flex-col space-y-3">
                 <div className="relative flex justify-center h-[230px]">
                   <Image

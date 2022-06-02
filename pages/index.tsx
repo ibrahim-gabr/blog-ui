@@ -23,6 +23,7 @@ export interface Post {
   tags: string[];
   is_featured: boolean;
   image: string;
+  slug: string;
 }
 
 export type HomePageProps = {
