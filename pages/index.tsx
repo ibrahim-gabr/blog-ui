@@ -3,6 +3,8 @@ import Head from "next/head";
 import Image from "next/image";
 import { Newsletter } from "../components/layout/Newsletter";
 import { Showcase } from "../components/Showcase";
+import { GetServerSideProps } from "next";
+import Client from "~/utils/Client";
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +20,16 @@ const Home: NextPage = () => {
       </main>
     </div>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const homeData = await Client.get("getHomeData");
+
+  console.log(homeData);
+
+  return {
+    props: {},
+  };
 };
 
 export default Home;
