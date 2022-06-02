@@ -5,8 +5,30 @@ import { Newsletter } from "../components/layout/Newsletter";
 import { Showcase } from "../components/Showcase";
 import { GetServerSideProps } from "next";
 import Client from "~/utils/Client";
+import { FC } from "react";
+import MostRead from "~/components/MostRead";
+export interface Post {
+  author: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  subcategory: string;
+  created_at: string;
+  id: number;
+  tags: string[];
+  is_featured: boolean;
+  image: string;
+}
 
-const Home: NextPage = () => {
+export type HomePageProps = {
+  homeData: {
+    most_read: Post[];
+  };
+  loading: boolean;
+};
+
+const Home: FC<HomePageProps> = ({ homeData, loading }) => {
+  console.log("loading", loading);
   return (
     <div>
       <Head>
@@ -17,18 +39,35 @@ const Home: NextPage = () => {
 
       <main>
         <Showcase />
+
+        <MostRead posts={homeData.most_read} />
       </main>
     </div>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const homeData = await Client.get("getHomeData");
-
+export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+  let loading = true;
+  let homeData = {
+    most_read: [],
+  };
+  try {
+    let { data } = await Client.get("getHomeData");
+    homeData = data;
+    loading = false;
+  } catch (error: any) {
+    console.log(error?.response || error);
+  }
   console.log(homeData);
-
   return {
-    props: {},
+    props: {
+      loading,
+      homeData,
+    },
   };
 };
 
