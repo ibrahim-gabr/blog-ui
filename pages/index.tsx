@@ -1,16 +1,10 @@
-import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import { Newsletter } from "../components/layout/Newsletter";
 import { Showcase } from "../components/Showcase";
 import { GetServerSideProps } from "next";
 import Client from "~/utils/Client";
 import { FC } from "react";
 import MostRead from "~/components/MostRead";
-import CardSideImage from "~/components/common/CardSideImage";
-import { Container } from "~/components/common/container";
-import FeaturedCard from "~/components/common/FeaturedCard";
-import FeaturedPostBody from "~/components/common/FeaturedPostBody";
+
 import OtherPosts from "~/components/OtherPosts";
 export interface Post {
   author: string;
@@ -73,7 +67,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   } catch (error: any) {
     console.log(error?.response || error);
   }
-  console.log(homeData);
+  
   return {
     props: {
       loading,

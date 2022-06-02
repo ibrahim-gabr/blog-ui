@@ -64,7 +64,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   } catch (error: any) {
     console.log(error?.response || error);
   }
-  console.log(studiesData);
+
   return {
     props: {
       loading,
