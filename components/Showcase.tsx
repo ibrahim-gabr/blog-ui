@@ -3,7 +3,7 @@ import React from "react";
 
 export const Showcase = () => {
   return (
-    <div className="relative bg-indigo-800 ">
+    <div className="relative  ">
       <div className="absolute inset-0">
         <Image
           className="w-full h-full object-cover"

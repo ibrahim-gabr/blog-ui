@@ -6,7 +6,7 @@ import FeaturedPostBody from "../common/FeaturedPostBody";
 import { Container } from "../common/container";
 import FeaturedCard from "../common/FeaturedCard";
 import CardSideImage from "../common/CardSideImage";
-import cn from 'classnames';
+import cn from "classnames";
 
 type Props = {
   posts: Post[];
@@ -47,14 +47,52 @@ const OtherPosts: FC<Props> = ({ posts }) => {
               posts.slice(4, 7).map((post, i) => (
                 <div
                   key={post.id}
-                  className={cn('pt-3',i != 0 && 'border-t-2 border-theme-light-gray')}
+                  className={cn(
+                    "pt-3",
+                    i != 0 && "border-t-2 border-theme-light-gray"
+                  )}
                 >
                   <FeaturedPostBody post={post} />
                 </div>
               ))}
           </div>
           <div className="md:col-start-2 md:col-end-4 ">
-            {featuredPost && <FeaturedCard post={featuredPost} />}
+            {featuredPost && (
+              <div className="relative">
+                <div className="absolute inset-0 flex justify-center h-[490px]">
+                  <Image
+                    src={featuredPost.image}
+                    alt={featuredPost.title}
+                    objectFit="cover"
+                    layout="fill"
+                  />
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, rgba(29, 29, 29, 0) 0%, rgba(29, 29, 29, 0.23) 38.02%, rgba(29, 29, 29, 0.72) 64.06%, rgba(29, 29, 29, 0.95) 100%)",
+                    }}
+                    aria-hidden="true"
+                  />
+                </div>
+                <div className="relative max-w-7xl mx-auto h-[264px] sm:h-[500px] px-4 sm:px-6 lg:px-8 flex items-end py-8">
+                  <div className="flex flex-col space-y-3">
+                    <span className="text-sm text-[#FAFAFA] border-r-2 border-theme-primary pr-2">
+                      {featuredPost.subcategory}
+                    </span>
+                    <span className="text-white text-xl">
+                      {featuredPost.title}
+                    </span>
+                    <p className="text-[#ECEEED] text-sm">
+                      {featuredPost.excerpt}
+                    </p>
+                    <p className="text-[#ECEEED] text-sm">
+                      بواسطه {featuredPost.author}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </Container>
