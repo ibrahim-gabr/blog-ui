@@ -8,10 +8,6 @@ type Props = {
 const NavSections: FC<Props> = ({ isHomePage }) => {
   const router = useRouter();
   const routes = [
-    {
-      text: "الرئيسية",
-      href: "/",
-    },
     { text: "التقارير والدراسات", href: "/studies" },
     { text: "المقالات", href: "/articles" },
   ];
@@ -21,10 +17,18 @@ const NavSections: FC<Props> = ({ isHomePage }) => {
         isHomePage ? "text-white" : "text-[#404343]"
       } flex-1 justify-start mr-8`}
     >
+      <div className={`${router.pathname === "/" && "active"} mx-4 pb-2`}>
+        <Link href={"/"} className="text-base font-normal">
+          الرئيسية
+        </Link>
+      </div>
+
       {routes.map((route, index) => (
         <>
           <div
-            className={`${router.pathname == route.href && "active"} mx-4 pb-2`}
+            className={`${
+              router.pathname.startsWith(route.href) && "active"
+            } mx-4 pb-2`}
             key={index}
           >
             <Link href={route.href} className="text-base font-normal">
