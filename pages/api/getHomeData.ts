@@ -4,6 +4,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 const fs = require("fs");
 export const postBody = {
   mainImage: "/images/posts/post_main_image.png",
+  tags:["بيع المنتجات" , "استرتيجيات" , "تسويق"],
   sections: [
     {
       id: 0,
@@ -189,6 +190,7 @@ export interface Section {
   title?: string;
   image?: string;
   id: number;
+  tags:string[];
 }
 type Data = {
   most_read: Post[];

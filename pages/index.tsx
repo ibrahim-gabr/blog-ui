@@ -28,6 +28,7 @@ export interface Section {
   title?: string;
   id: number;
   image?: string;
+  tags:string[];
 }
 
 export type HomePageProps = {

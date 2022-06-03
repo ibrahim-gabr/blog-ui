@@ -11,6 +11,7 @@ import { Container } from "~/components/common/container";
 import SocialIcon from "~/components/common/socialicon";
 import { GoMail } from "react-icons/go";
 import { FiFacebook } from "react-icons/fi";
+import ArticleTags from "~/components/articles/tags";
 
 export type ArticleProps = {
   articleData: Post;
@@ -54,11 +55,7 @@ const StudiesArticle: FC<ArticleProps> = ({ articleData, loading }) => {
             </div>
           ))}
 
-          <div>
-            <SocialIcon>
-              <FiFacebook className="w-4 h-4" />
-            </SocialIcon>
-          </div>
+          <ArticleTags tags={articleData.tags}/>
         </div>
       </Container>
     </div>
