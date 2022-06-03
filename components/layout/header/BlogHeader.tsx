@@ -12,7 +12,7 @@ type Props = {
 const BlogHeader: FC<Props> = ({ isHomePage }) => {
   const [show, setShow] = useState(false);
   const router = useRouter();
-  const ref = useRef();
+  const ref = useRef<HTMLDivElement>(null);
   useOnClickOutside(ref, () => setShow(false));
 
   return (
@@ -40,28 +40,28 @@ const BlogHeader: FC<Props> = ({ isHomePage }) => {
             }`}
           >
             <div
+              onClick={() => {
+                setShow(false);
+                router.push("/");
+              }}
               className={cn(
                 "block px-3 py-1 rounded-md  text-base font-ormal hover:bg-gray-700 hover:text-white"
               )}
             >
-              <Link
-                href={"/"}
-                className={cn(
-                  "block px-3 py-1 rounded-md  text-base font-ormal hover:bg-gray-700 hover:text-white"
-                )}
-              >
-                الرئيسية
-              </Link>
+              <span>الرئيسية</span>
             </div>
             {navigation.map((item) => (
               <div
                 key={item.text}
-                onClick={() => setShow(false)}
+                onClick={() => {
+                  setShow(false);
+                  router.push(item.href);
+                }}
                 className={cn(
-                  "block px-3 py-1 rounded-md  text-base font-ormal hover:bg-gray-700 hover:text-white"
+                  "block  px-3 py-1 rounded-md  text-base font-ormal hover:bg-gray-700 hover:text-white"
                 )}
               >
-                <Link href={item.href}>{item.text}</Link>
+                <span>{item.text}</span>
               </div>
             ))}
           </div>
