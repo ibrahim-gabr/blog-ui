@@ -24,7 +24,7 @@ const OtherPosts: FC<Props> = ({ posts }) => {
   return (
     <>
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-4 mt-4 gap-y-10 gap-x-7  py-4">
+        <div className="relative grid grid-cols-1 md:grid-cols-4 mt-4 gap-y-10 gap-x-7  py-4 h-full">
           {posts &&
             posts.slice(0, 4).map((post) => (
               <>
@@ -57,7 +57,7 @@ const OtherPosts: FC<Props> = ({ posts }) => {
                 </div>
               ))}
           </div>
-          <div className="md:col-start-2 md:col-end-4 ">
+          <div className="md:col-start-2 md:col-end-4 h-[490px]">
             {featuredPost && (
               <div className="relative">
                 <div className="absolute inset-0 flex justify-center h-[490px]">
@@ -69,7 +69,7 @@ const OtherPosts: FC<Props> = ({ posts }) => {
                   />
                   <Overlay />
                 </div>
-                <div className="relative max-w-7xl mx-auto h-[264px] sm:h-[500px] px-4 sm:px-6 lg:px-8 flex items-end py-8">
+                <div className="relative max-w-7xl mx-auto h-[500px]  sm:h-[500px] px-4 sm:px-6 lg:px-8 flex items-end py-8">
                   <div className="flex flex-col space-y-3">
                     <span className="text-sm text-[#FAFAFA] border-r-2 border-theme-primary pr-2">
                       {featuredPost.subcategory}
