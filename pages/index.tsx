@@ -6,6 +6,9 @@ import { FC } from "react";
 import MostRead from "~/components/MostRead";
 
 import OtherPosts from "~/components/OtherPosts";
+import Banner from "~/components/common/banner";
+import FeaturedPostBody from "~/components/common/FeaturedPostBody";
+import HomeBanner from "~/components/home/banner";
 export interface Post {
   author: string;
   title: string;
@@ -29,23 +32,28 @@ export interface Section {
   title?: string;
   id: number;
   image?: string;
-  tags:string[];
+  tags: string[];
 }
-export interface Comment{
-  id:number;
-  name:string;
-  content:string;
-  createdAt:string;
+export interface Comment {
+  id: number;
+  name: string;
+  content: string;
+  createdAt: string;
 }
 
 export type HomePageProps = {
   homeData: {
     most_read: Post[];
     posts: Post[];
+    banner: Banner;
   };
   loading: boolean;
 };
-
+export type Banner = {
+  id: number;
+  image: string;
+  content: Post;
+};
 const Home: FC<HomePageProps> = ({ homeData, loading }) => {
   console.log("loading", loading);
   return (
@@ -60,6 +68,7 @@ const Home: FC<HomePageProps> = ({ homeData, loading }) => {
         <Showcase />
 
         <MostRead posts={homeData.most_read} />
+        <HomeBanner post={homeData.banner} />
 
         {/* other posts */}
         <OtherPosts posts={homeData.posts} />
@@ -77,6 +86,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   let homeData = {
     most_read: [],
     posts: [],
+    banner: {},
   };
   try {
     let { data } = await Client.get("getHomeData");

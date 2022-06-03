@@ -1,8 +1,4 @@
 import React from "react";
-import SocialIcon from "../common/socialicon";
-import { FaFacebookF } from "react-icons/fa";
-import { BsTwitter } from "react-icons/bs";
-import { RiLinkedinFill } from "react-icons/ri";
 import { FC } from "react";
 import { Comment } from "~/pages";
 import { Container } from "../common/container";
