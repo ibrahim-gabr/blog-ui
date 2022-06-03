@@ -203,6 +203,7 @@ export interface Post {
   body?: {
     mainImage: string;
     sections: Section[];
+    tags?: string[];
   };
 }
 
@@ -211,7 +212,6 @@ export interface Section {
   title?: string;
   image?: string;
   id: number;
-  tags:string[];
   comments?:Comment[];
 }
 
