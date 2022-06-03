@@ -31,7 +31,7 @@ export const Newsletter = () => {
 
         <button
           type="button"
-          className="mt-3 sm:mt-0 w-full sm:w-[166px] inline-flex h-10 justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-sm shadow-sm text-white bg-theme-primary  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-theme-primary"
+          className="mt-3 sm:mt-0 w-full sm:w-[166px] inline-flex h-10 justify-center items-center px-4 py-2 border border-transparent text-sm font-normal rounded-sm shadow-sm text-white bg-theme-primary  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-theme-primary"
         >
           اشتراك
         </button>

@@ -8,6 +8,7 @@ import { Comment } from "~/pages";
 import { Container } from "../common/container";
 import { GoClock } from "react-icons/go";
 import cn from "classnames";
+import CommentsForm from "./CommentsForm";
 
 export type TagsProps = {
   comments: Comment[];
@@ -45,6 +46,12 @@ const ArticleComments: FC<TagsProps> = ({ comments }) => {
             </div>
           ))}
         </div>
+      </div>
+      <div>
+        <div className="flex justify-start border-theme-primary pr-4 border-r-2 text-lg">
+          كن اول من يعلق
+        </div>
+        <CommentsForm />
       </div>
     </Container>
   );
