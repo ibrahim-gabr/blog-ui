@@ -3,13 +3,18 @@ import { Post } from "~/pages";
 import { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import Overlay from "./overlay";
+import { useRouter } from "next/router";
 type Props = {
   post: Post;
 };
 
 export const CardOverlay: FC<Props> = ({ post }) => {
+  const router = useRouter();
   return (
-    <div className="relative  ">
+    <div
+      className="relative  "
+      onClick={() => router.push(`/studies/${post.slug}`)}
+    >
       <div className="absolute inset-0">
         <Image
           src={post.image}

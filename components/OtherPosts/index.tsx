@@ -8,6 +8,7 @@ import FeaturedCard from "../common/FeaturedCard";
 import CardSideImage from "../common/CardSideImage";
 import cn from "classnames";
 import Overlay from "../common/overlay";
+import { useRouter } from "next/router";
 
 type Props = {
   posts: Post[];
@@ -21,6 +22,7 @@ const OtherPosts: FC<Props> = ({ posts }) => {
       setFeaturedPost(featured);
     }
   }, [posts]);
+  const router = useRouter();
   return (
     <>
       <Container>
@@ -28,7 +30,11 @@ const OtherPosts: FC<Props> = ({ posts }) => {
           {posts &&
             posts.slice(0, 4).map((post) => (
               <>
-                <div className="flex flex-col space-y-3" key={post.id}>
+                <div
+                  className="flex flex-col space-y-3"
+                  key={post.id}
+                  onClick={() => router.push(`/studies/${post.slug}`)}
+                >
                   <div className="relative flex justify-center h-[230px]">
                     <Image
                       src={post.image}
@@ -48,6 +54,7 @@ const OtherPosts: FC<Props> = ({ posts }) => {
               posts.slice(4, 7).map((post, i) => (
                 <div
                   key={post.id}
+                  onClick={() => router.push(`/studies/${post.slug}`)}
                   className={cn(
                     "pt-3",
                     i != 0 && "border-t-2 border-theme-light-gray"
@@ -59,7 +66,10 @@ const OtherPosts: FC<Props> = ({ posts }) => {
           </div>
           <div className="md:col-start-2 md:col-end-4 h-[490px]">
             {featuredPost && (
-              <div className="relative">
+              <div
+                className="relative"
+                onClick={() => router.push(`/studies/${featuredPost.slug}`)}
+              >
                 <div className="absolute inset-0 flex justify-center h-[490px]">
                   <Image
                     src={featuredPost.image}

@@ -2,12 +2,17 @@ import React from "react";
 import Image from "next/image";
 import { Post } from "~/pages";
 import { FC, useEffect, useState } from "react";
+import { useRouter } from "next/router";
 type Props = {
   post: Post;
 };
 const CardSideImage: FC<Props> = ({ post }) => {
+  const router = useRouter();
   return (
-    <div className="relative flex items-center">
+    <div
+      className="relative flex items-center"
+      onClick={() => router.push(`/studies/${post.slug}`)}
+    >
       <div className="relative w-[150px] h-[150px] ">
         <Image
           layout="fill"
