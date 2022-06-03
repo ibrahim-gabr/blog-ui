@@ -11,7 +11,7 @@ export type TagsProps = {
 
 const ArticleTags: FC<TagsProps> = ({ tags }) => {
   return (
-    <div className="flex flex-col space-y-3 sm:space-y-0 sm:flex-row sm:justify-between items-center ">
+    <div className="flex flex-col space-y-3 sm:space-y-0 sm:flex-row sm:justify-between items-center py-5 border-t-2 border-b-2 border-theme-light-gray ">
       {/* tags */}
       <div className="flex space-x-2 space-x-reverse justify-center sm:justify-start">
         {tags?.map((tag, idx) => (

@@ -12,6 +12,7 @@ import SocialIcon from "~/components/common/socialicon";
 import { GoMail } from "react-icons/go";
 import { FiFacebook } from "react-icons/fi";
 import ArticleTags from "~/components/articles/tags";
+import ArticleComments from "~/components/articles/comments";
 
 export type ArticleProps = {
   articleData: Post;
@@ -55,7 +56,10 @@ const StudiesArticle: FC<ArticleProps> = ({ articleData, loading }) => {
             </div>
           ))}
 
-          <ArticleTags tags={articleData.tags}/>
+          <ArticleTags tags={articleData.tags} />
+          {postBody?.comments && !loading &&  (
+            <ArticleComments comments={postBody?.comments} />
+          )}
         </div>
       </Container>
     </div>

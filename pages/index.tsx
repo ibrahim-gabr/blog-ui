@@ -21,6 +21,7 @@ export interface Post {
   body?: {
     mainImage?: string;
     sections: Section[];
+    comments?: Comment[];
   };
 }
 export interface Section {
@@ -29,6 +30,12 @@ export interface Section {
   id: number;
   image?: string;
   tags:string[];
+}
+export interface Comment{
+  id:number;
+  name:string;
+  content:string;
+  createdAt:string;
 }
 
 export type HomePageProps = {
