@@ -5,12 +5,15 @@ import { Router, useRouter } from "next/router";
 type Props = {
   isHomePage: boolean;
 };
+
+export const navigation = [
+  { text: "التقارير والدراسات", href: "/studies" },
+  { text: "المقالات", href: "/articles" },
+];
+
 const NavSections: FC<Props> = ({ isHomePage }) => {
   const router = useRouter();
-  const routes = [
-    { text: "التقارير والدراسات", href: "/studies" },
-    { text: "المقالات", href: "/articles" },
-  ];
+
   return (
     <div
       className={`hidden sm:flex items-center ${
@@ -23,7 +26,7 @@ const NavSections: FC<Props> = ({ isHomePage }) => {
         </Link>
       </div>
 
-      {routes.map((route, index) => (
+      {navigation.map((route, index) => (
         <>
           <div
             className={`${
