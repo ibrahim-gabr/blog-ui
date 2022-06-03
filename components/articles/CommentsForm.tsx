@@ -16,7 +16,7 @@ const CommentsForm = () => {
             id="about"
             name="about"
             rows={6}
-            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full text-[#B3B9B9] text-xs border border-gray-300 rounded-sm"
+            className="shadow-sm focus:ring-theme-primary focus:border-theme-primary block w-full text-[#B3B9B9] text-xs border border-[#E9E9E9] rounded-sm"
             placeholder={"برجاء كتابة التعليق الخاص بك"}
           />
         </div>
@@ -26,7 +26,7 @@ const CommentsForm = () => {
         {/* name */}
         <div className="">
           <label
-            htmlFor="first-name"
+            htmlFor="name"
             className="block text-sm font-normal text-[#202221]            "
           >
             الاسم
@@ -34,11 +34,11 @@ const CommentsForm = () => {
           <div className="mt-2.5">
             <input
               type="text"
-              name="first-name"
-              id="first-name"
-              autoComplete="given-name"
+              name="name"
+              id="name"
+              autoComplete="name"
               placeholder="برجاء ادخال الاسم"
-              className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm placeholder-[#B3B9B9]"
+              className="shadow-sm focus:ring-theme-primary focus:border-theme-primary block w-full sm:text-sm border-[#E9E9E9] rounded-sm placeholder-[#B3B9B9]"
             />
           </div>
         </div>
@@ -58,7 +58,7 @@ const CommentsForm = () => {
               type="email"
               placeholder="ادخال البريد الالكترونى"
               autoComplete="email"
-              className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm placeholder-[#B3B9B9]"
+              className="shadow-sm focus:ring-theme-primary focus:border-theme-primary block w-full sm:text-sm border-[#E9E9E9] rounded-sm placeholder-[#B3B9B9]"
             />
           </div>
         </div>
