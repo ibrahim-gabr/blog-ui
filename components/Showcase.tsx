@@ -1,19 +1,11 @@
 import Image from "next/image";
 import React from "react";
+import Banner from "./common/banner";
 import Overlay from "./common/overlay";
 
 export const Showcase = () => {
   return (
-    <div className="relative  ">
-      <div className="absolute inset-0">
-        <Image
-          className="w-full h-full object-cover"
-          src="/images/diverse-people-working-office 1.png"
-          alt=""
-          layout="fill"
-        />
-       <Overlay />
-      </div>
+    <Banner img="/images/diverse-people-working-office 1.png">
       <div className="relative max-w-7xl mx-auto h-[264px] sm:h-[500px] px-4 sm:px-6 lg:px-8 flex items-end py-4">
         <div className="border-r-4 flex flex-col justify-end border-theme-primary pr-4">
           <h1 className="text-3xl sm:text-5xl font-normal tracking-tight text-white  lg:text-6xl ">
@@ -26,6 +18,6 @@ export const Showcase = () => {
           </p>
         </div>
       </div>
-    </div>
+    </Banner>
   );
 };

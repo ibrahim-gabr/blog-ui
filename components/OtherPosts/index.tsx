@@ -4,8 +4,6 @@ import { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import FeaturedPostBody from "../common/FeaturedPostBody";
 import { Container } from "../common/container";
-import FeaturedCard from "../common/FeaturedCard";
-import CardSideImage from "../common/CardSideImage";
 import cn from "classnames";
 import Overlay from "../common/overlay";
 import { useRouter } from "next/router";

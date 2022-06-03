@@ -12,7 +12,7 @@ export const CardOverlay: FC<Props> = ({ post }) => {
   const router = useRouter();
   return (
     <div
-      className="relative  "
+      className="relative"
       onClick={() => router.push(`/studies/${post.slug}`)}
     >
       <div className="absolute inset-0">
@@ -28,10 +28,10 @@ export const CardOverlay: FC<Props> = ({ post }) => {
       </div>
       <div className="relative max-w-7xl mx-auto h-[250px] px-4 sm:px-6 lg:px-8 flex items-end py-4">
         <div className="flex flex-col justify-end">
-          <h1 className="text-lg  font-normal tracking-tight text-white  ">
+          <h1 className="text-lg font-normal tracking-tight text-white">
             {post.subcategory}
           </h1>
-          <p className="mt-2 text-base  text-[#ECEEED] max-w-3xl">
+          <p className="mt-2 text-base text-[#ECEEED] max-w-3xl">
             {post.excerpt}
           </p>
           <p className="mt-2 text-sm  text-[#ECEEED] max-w-3xl">
