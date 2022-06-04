@@ -63,5 +63,14 @@
 }
 
 #goo-loader circle:nth-of-type(2) {
-  fill: #FF9F4B;
+  fill: #ff9f4b;
+}
+.Toastify__toast--success {
+  background-color: #caf9ee !important;
+  color: #3dcdad;
+}
+.Toastify__toast--error {
+  background-color: #fbc8d1 !important;
+  color: #fe4668;
+  height: 20px;
 }

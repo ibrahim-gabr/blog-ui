@@ -4,6 +4,7 @@ import TextArea from "./textarea";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Client from "~/utils/Client";
+import { toast } from 'react-toastify';
 
 type MyFormValues = {
   name: string;
@@ -29,6 +30,7 @@ const CommentsForm = () => {
           await Client.post("createComment", {
             comment: values,
           });
+          toast.success("تم ارسال التعليق بنجاح");
         } catch (error) {}
         actions.setSubmitting(false);
       }}

@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 // import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { MutatingDots } from "react-loader-spinner";
+import 'react-toastify/dist/ReactToastify.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false);
