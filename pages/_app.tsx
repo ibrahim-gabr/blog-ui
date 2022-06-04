@@ -5,7 +5,9 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 // import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { MutatingDots } from "react-loader-spinner";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
+import { Provider } from "react-redux";
+import store from "~/app/store";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false);
@@ -27,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     };
   }, []);
   return (
-    <>
+    <Provider store={store}>
       <Layout>
         {loading ? (
           <div className="h-screen w-full flex justify-center items-center">
@@ -42,7 +44,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         )}
       </Layout>
-    </>
+    </Provider>
   );
 }
 

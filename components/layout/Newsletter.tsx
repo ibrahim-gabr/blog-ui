@@ -28,7 +28,7 @@ export const Newsletter = () => {
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={async (values, actions) => {
-          console.log(values);
+
           try {
             await Client.post("subscribeNewsletter", {
               email: values.email,

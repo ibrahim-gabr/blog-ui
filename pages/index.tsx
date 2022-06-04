@@ -58,7 +58,6 @@ export type Banner = {
   content: Post;
 };
 const Home: FC<HomePageProps> = ({ homeData }) => {
-  console.log(homeData.topBanner)
   return (
     <div>
       <Head>

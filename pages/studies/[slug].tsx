@@ -14,6 +14,7 @@ import { FiFacebook } from "react-icons/fi";
 import ArticleTags from "~/components/articles/tags";
 import ArticleComments from "~/components/articles/comments";
 import FontControll from "~/components/articles/FontControll";
+import { useAppSelector } from "~/app/hooks";
 
 export type ArticleProps = {
   articleData: Post;
@@ -21,8 +22,10 @@ export type ArticleProps = {
 };
 
 const StudiesArticle: FC<ArticleProps> = ({ articleData, loading }) => {
-  
   const postBody = articleData.body;
+
+  const size = useAppSelector((state) => state.article.fontSize);
+
   return (
     <div>
       {!loading && <ArticleHeader article={articleData} />}
@@ -38,7 +41,7 @@ const StudiesArticle: FC<ArticleProps> = ({ articleData, loading }) => {
         <div className="flex flex-col space-y-7">
           {postBody?.sections.map((section) => (
             <div key={section.id} className="flex flex-col space-y-7 ">
-              <h2 className="text-2xl">{section.title}</h2>
+              <h2 className={`text-${size.title}`}>{section.title}</h2>
 
               {section?.image && (
                 <img
@@ -50,7 +53,10 @@ const StudiesArticle: FC<ArticleProps> = ({ articleData, loading }) => {
 
               <div className="flex flex-col space-y-3">
                 {section.content.map((content, idx) => (
-                  <p className="text-[#606564] font-normal" key={idx}>
+                  <p
+                    className={`text-[#606564] text-${size.paragraph} font-normal`}
+                    key={idx}
+                  >
                     {content}
                   </p>
                 ))}
@@ -59,7 +65,7 @@ const StudiesArticle: FC<ArticleProps> = ({ articleData, loading }) => {
           ))}
 
           <ArticleTags tags={articleData.tags} />
-          {postBody?.comments && !loading &&  (
+          {postBody?.comments && !loading && (
             <ArticleComments comments={postBody?.comments} />
           )}
         </div>
