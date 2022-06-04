@@ -27,18 +27,16 @@ const NavSections: FC<Props> = ({ isHomePage }) => {
       </div>
 
       {navigation.map((route, index) => (
-        <>
-          <div
-            className={`${
-              router.pathname.startsWith(route.href) && "active"
-            } mx-4 pb-2`}
-            key={index}
-          >
-            <Link href={route.href} className="text-base font-normal">
-              {route.text}
-            </Link>
-          </div>
-        </>
+        <div
+          className={`${
+            router.pathname.startsWith(route.href) && "active"
+          } mx-4 pb-2`}
+          key={index}
+        >
+          <Link href={route.href} className="text-base font-normal">
+            {route.text}
+          </Link>
+        </div>
       ))}
     </div>
   );

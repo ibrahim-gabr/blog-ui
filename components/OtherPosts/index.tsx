@@ -2,7 +2,6 @@ import React from "react";
 import { Post } from "~/pages";
 import { FC, useEffect, useState } from "react";
 import Image from "next/image";
-
 import { Container } from "../common/container";
 import cn from "classnames";
 import Overlay from "../common/overlay";
@@ -29,19 +28,17 @@ const OtherPosts: FC<Props> = ({ posts }) => {
         <div className="relative grid grid-cols-1 md:grid-cols-4 mt-4 gap-y-10 gap-x-7  py-4 h-full">
           {posts &&
             posts.slice(0, 4).map((post) => (
-              <>
-                <Card post={post}>
-                  <div className="relative flex justify-center h-[230px]">
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      objectFit="cover"
-                      layout="fill"
-                    />
-                  </div>
-                  <PostBody post={post} />
-                </Card>
-              </>
+              <Card post={post} key={post.id}>
+                <div className="relative flex justify-center h-[230px]">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    objectFit="cover"
+                    layout="fill"
+                  />
+                </div>
+                <PostBody post={post} />
+              </Card>
             ))}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 mt-6 gap-y-10 gap-x-4  py-8">

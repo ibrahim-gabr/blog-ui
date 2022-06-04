@@ -1,67 +1,26 @@
 import React from "react";
+import Input from "./input";
+import TextArea from "./textarea";
 
 const CommentsForm = () => {
   return (
     <div className="mt-5 flex flex-col space-y-4">
       {/* comment */}
       <div className="sm:col-span-6">
-        <label
-          htmlFor="about"
-          className="block text-sm font-medium text-[#202221]            "
-        >
-          اكتب تعليقك
-        </label>
-        <div className="mt-2.5">
-          <textarea
-            id="about"
-            name="about"
-            rows={6}
-            className="shadow-sm focus:ring-theme-primary focus:border-theme-primary block w-full text-[#B3B9B9] text-xs border border-[#E9E9E9] rounded-sm"
-            placeholder={"برجاء كتابة التعليق الخاص بك"}
-          />
-        </div>
+        <TextArea
+          label="اكتب تعليقك"
+          type="content"
+          placeholder={"برجاء كتابة التعليق الخاص بك"}
+        />
       </div>
 
       <div className="grid grid-cols-2 gap-x-4">
-        {/* name */}
-        <div className="">
-          <label
-            htmlFor="name"
-            className="block text-sm font-normal text-[#202221]            "
-          >
-            الاسم
-          </label>
-          <div className="mt-2.5">
-            <input
-              type="text"
-              name="name"
-              id="name"
-              autoComplete="name"
-              placeholder="برجاء ادخال الاسم"
-              className="shadow-sm focus:ring-theme-primary focus:border-theme-primary block w-full sm:text-sm border-[#E9E9E9] rounded-sm placeholder-[#B3B9B9]"
-            />
-          </div>
-        </div>
-
-        {/* email */}
-        <div className="">
-          <label
-            htmlFor="email"
-            className="block text-sm font-normal text-[#202221]"
-          >
-            البريد الالكترونى
-          </label>
-          <div className="mt-2.5">
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="ادخال البريد الالكترونى"
-              autoComplete="email"
-              className="shadow-sm focus:ring-theme-primary focus:border-theme-primary block w-full sm:text-sm border-[#E9E9E9] rounded-sm placeholder-[#B3B9B9]"
-            />
-          </div>
-        </div>
+        <Input label="الاسم" type="name" placeholder="برجاء ادخال الاسم" />
+        <Input
+          label="البريد الالكترونى"
+          type="email"
+          placeholder="ادخال البريد الالكترونى"
+        />
       </div>
       {/* submit button */}
       <button

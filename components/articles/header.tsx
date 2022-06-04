@@ -16,7 +16,7 @@ const ArticleHeader: FC<ArticleHeaderProps> = ({ article }) => {
   const title = router.pathname.startsWith("studies")
     ? "الدرااسات"
     : "االمقالات";
-  console.log(article);
+
   return (
     <Banner img="/images/article_header.png">
       <div className="relative max-w-7xl mx-auto h-[260px] sm:h-[336px] px-4 sm:px-6 lg:px-8 flex flex-col items-start space-y-4  justify-center py-4">

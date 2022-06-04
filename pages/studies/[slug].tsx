@@ -20,7 +20,7 @@ export type ArticleProps = {
 };
 
 const StudiesArticle: FC<ArticleProps> = ({ articleData, loading }) => {
-  console.log(articleData);
+  
   const postBody = articleData.body;
   return (
     <div>
