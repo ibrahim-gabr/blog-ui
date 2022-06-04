@@ -12,7 +12,7 @@ export const CardOverlay: FC<Props> = ({ post }) => {
   const router = useRouter();
   return (
     <div
-      className="relative"
+      className="relative cursor-pointer"
       onClick={() => router.push(`/studies/${post.slug}`)}
     >
       <div className="absolute inset-0">

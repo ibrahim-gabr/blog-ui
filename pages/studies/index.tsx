@@ -3,10 +3,10 @@ import { GetServerSideProps } from "next";
 import Client from "~/utils/Client";
 import { FC } from "react";
 import Image from "next/image";
-import FeaturedPostBody from "~/components/common/FeaturedPostBody";
 import { Container } from "~/components/common/container";
 import { Post } from "..";
 import { useRouter } from "next/router";
+import PostBody from "~/components/common/PostBody";
 
 export type StudiesPageProps = {
   studiesData: {
@@ -26,7 +26,7 @@ const Studies: FC<StudiesPageProps> = ({ studiesData, loading }) => {
         {studiesData.posts &&
           studiesData.posts.map((post) => (
             <div
-              className="max-w-[343px] md:max-w-[370px]"
+              className="max-w-[343px] md:max-w-[370px] cursor-pointer"
               key={post.id}
               onClick={() => router.push(`/studies/${post.slug}`)}
             >
@@ -39,7 +39,7 @@ const Studies: FC<StudiesPageProps> = ({ studiesData, loading }) => {
                     layout="fill"
                   />
                 </div>
-                <FeaturedPostBody post={post} />
+                <PostBody post={post} />
               </div>
             </div>
           ))}

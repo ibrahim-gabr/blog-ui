@@ -2,13 +2,16 @@ import Head from "next/head";
 import { Showcase } from "../components/Showcase";
 import { GetServerSideProps } from "next";
 import Client from "~/utils/Client";
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import MostRead from "~/components/MostRead";
 import { NextSeo } from "next-seo";
 import OtherPosts from "~/components/OtherPosts";
 import Banner from "~/components/common/banner";
-import FeaturedPostBody from "~/components/common/FeaturedPostBody";
 import HomeBanner from "~/components/home/banner";
+import { useRouter } from "next/router";
+
+import { MutatingDots } from "react-loader-spinner";
+
 export interface Post {
   author: string;
   title: string;
@@ -47,15 +50,13 @@ export type HomePageProps = {
     posts: Post[];
     banner: Banner;
   };
-  loading: boolean;
 };
 export type Banner = {
   id: number;
   image: string;
   content: Post;
 };
-const Home: FC<HomePageProps> = ({ homeData, loading }) => {
-  console.log("loading", loading);
+const Home: FC<HomePageProps> = ({ homeData }) => {
   return (
     <div>
       <Head>
@@ -78,6 +79,7 @@ const Home: FC<HomePageProps> = ({ homeData, loading }) => {
           description: "Blog UI in Arabic using Nextjs Typescript",
         }}
       />
+
       <main>
         <Showcase />
         <MostRead posts={homeData.most_read} />
@@ -90,11 +92,11 @@ const Home: FC<HomePageProps> = ({ homeData, loading }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
-  res.setHeader(
-    "Cache-Control",
-    "public, s-maxage=10, stale-while-revalidate=59"
-  );
-  let loading = true;
+  // res.setHeader(
+  //   "Cache-Control",
+  //   "public, s-maxage=10, stale-while-revalidate=59"
+  // );
+
   let homeData = {
     most_read: [],
     posts: [],
@@ -103,14 +105,12 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   try {
     let { data } = await Client.get("getHomeData");
     homeData = data;
-    loading = false;
   } catch (error: any) {
     console.log(error?.response || error);
   }
 
   return {
     props: {
-      loading,
       homeData,
     },
   };

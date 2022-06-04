@@ -6,7 +6,7 @@ import Image from "next/image";
 type Props = {
   post: Post;
 };
-const FeaturedPostBody: FC<Props> = ({ post }) => {
+const PostBody: FC<Props> = ({ post }) => {
   return (
     <>
       <span className="text-sm text-theme-light-black border-r-2 border-theme-primary pr-2">
@@ -21,4 +21,4 @@ const FeaturedPostBody: FC<Props> = ({ post }) => {
   );
 };
 
-export default FeaturedPostBody;
+export default PostBody;

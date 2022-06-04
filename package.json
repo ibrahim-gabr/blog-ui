@@ -21,7 +21,8 @@
     "next-seo": "^5.4.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "react-icons": "^4.4.0"
+    "react-icons": "^4.4.0",
+    "react-loader-spinner": "^6.0.0-0"
   },
   "devDependencies": {
     "@svgr/webpack": "^6.2.1",

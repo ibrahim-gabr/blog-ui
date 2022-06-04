@@ -3,9 +3,9 @@ import { Post } from "~/pages";
 import { Container } from "../common/container";
 import MostReadHeader from "./header";
 import { FC, useEffect, useState } from "react";
-import FeaturedCard from "../common/FeaturedCard";
 import { CardOverlay } from "../common/CardOverlay";
 import CardSideImage from "../common/CardSideImage";
+import Card from "../common/card";
 
 type Props = {
   posts: Post[];
@@ -31,7 +31,7 @@ const MostRead: FC<Props> = ({ posts }) => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 mt-6 gap-y-10 gap-x-4  py-8">
-        {featuredPost && <FeaturedCard post={featuredPost} />}
+        {featuredPost && <Card post={featuredPost} />}
         <div className="flex flex-col space-y-5 ">
           {posts &&
             posts

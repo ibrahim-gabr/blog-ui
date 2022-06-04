@@ -16,7 +16,10 @@ type Banner = {
 const HomeBanner: FC<HomeBannerProps> = ({ post }) => {
   const router = useRouter();
   return (
-    <div onClick={() => router.push(`/studies/${post.content.slug}`)}>
+    <div
+      className="cursor-pointer"
+      onClick={() => router.push(`/studies/${post.content.slug}`)}
+    >
       <Banner img={post.image} overlay="right">
         <div className="relative max-w-7xl mx-auto h-[260px] sm:h-[336px] px-4 sm:px-6 lg:px-8 flex flex-col items-start space-y-4  justify-center py-4">
           <div className="relative justify-start max-w-7xl  h-[264px] sm:h-[500px] px-4 sm:px-6 lg:px-8 flex items-end py-8">

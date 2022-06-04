@@ -2,11 +2,13 @@ import React from "react";
 import { Post } from "~/pages";
 import { FC, useEffect, useState } from "react";
 import Image from "next/image";
-import FeaturedPostBody from "../common/FeaturedPostBody";
+
 import { Container } from "../common/container";
 import cn from "classnames";
 import Overlay from "../common/overlay";
 import { useRouter } from "next/router";
+import Card from "../common/card";
+import PostBody from "../common/PostBody";
 
 type Props = {
   posts: Post[];
@@ -28,11 +30,7 @@ const OtherPosts: FC<Props> = ({ posts }) => {
           {posts &&
             posts.slice(0, 4).map((post) => (
               <>
-                <div
-                  className="flex flex-col space-y-3"
-                  key={post.id}
-                  onClick={() => router.push(`/studies/${post.slug}`)}
-                >
+                <Card post={post}>
                   <div className="relative flex justify-center h-[230px]">
                     <Image
                       src={post.image}
@@ -41,31 +39,31 @@ const OtherPosts: FC<Props> = ({ posts }) => {
                       layout="fill"
                     />
                   </div>
-                  <FeaturedPostBody post={post} />
-                </div>
+                  <PostBody post={post} />
+                </Card>
               </>
             ))}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 mt-6 gap-y-10 gap-x-4  py-8">
-          <div className="flex flex-col space-y-5 md:col-span-1  ">
+          <div className="flex flex-col space-y-5 md:col-span-1">
             {posts &&
               posts.slice(4, 7).map((post, i) => (
                 <div
                   key={post.id}
                   onClick={() => router.push(`/studies/${post.slug}`)}
                   className={cn(
-                    "pt-3",
+                    "pt-3 cursor-pointer",
                     i != 0 && "border-t-2 border-theme-light-gray"
                   )}
                 >
-                  <FeaturedPostBody post={post} />
+                  <PostBody post={post} />
                 </div>
               ))}
           </div>
           <div className="md:col-start-2 md:col-end-4 h-[490px]">
             {featuredPost && (
               <div
-                className="relative"
+                className="relative cursor-pointer"
                 onClick={() => router.push(`/studies/${featuredPost.slug}`)}
               >
                 <div className="absolute inset-0 flex justify-center h-[490px]">

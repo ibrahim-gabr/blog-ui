@@ -10,7 +10,7 @@ const CardSideImage: FC<Props> = ({ post }) => {
   const router = useRouter();
   return (
     <div
-      className="relative flex items-center"
+      className="relative flex items-center cursor-pointer"
       onClick={() => router.push(`/studies/${post.slug}`)}
     >
       <div className="relative w-[150px] h-[150px] ">

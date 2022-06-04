@@ -9,7 +9,7 @@ type BanerProps = {
 };
 const Banner: FC<BanerProps> = ({ children, img, overlay }) => {
   return (
-    <div className="relative  ">
+    <div className="relative">
       <div className="absolute inset-0">
         <img className="w-full h-full object-cover" src={img} alt="" />
         <Overlay dir={overlay} />
