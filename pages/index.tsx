@@ -49,6 +49,7 @@ export type HomePageProps = {
     most_read: Post[];
     posts: Post[];
     banner: Banner;
+    topBanner: Banner;
   };
 };
 export type Banner = {
@@ -57,6 +58,7 @@ export type Banner = {
   content: Post;
 };
 const Home: FC<HomePageProps> = ({ homeData }) => {
+  console.log(homeData.topBanner)
   return (
     <div>
       <Head>
@@ -81,7 +83,7 @@ const Home: FC<HomePageProps> = ({ homeData }) => {
       />
 
       <main>
-        <Showcase />
+        <Showcase banner={homeData.topBanner} />
         <MostRead posts={homeData.most_read} />
         <HomeBanner post={homeData.banner} />
         {/* other posts */}

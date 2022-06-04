@@ -13,6 +13,7 @@ import { GoMail } from "react-icons/go";
 import { FiFacebook } from "react-icons/fi";
 import ArticleTags from "~/components/articles/tags";
 import ArticleComments from "~/components/articles/comments";
+import FontControll from "~/components/articles/FontControll";
 
 export type ArticleProps = {
   articleData: Post;
@@ -33,6 +34,7 @@ const StudiesArticle: FC<ArticleProps> = ({ articleData, loading }) => {
             alt={articleData?.title}
           />
         )}
+        <FontControll />
         <div className="flex flex-col space-y-7">
           {postBody?.sections.map((section) => (
             <div key={section.id} className="flex flex-col space-y-7 ">

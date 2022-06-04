@@ -1,16 +1,11 @@
 import React from "react";
 import Banner from "../common/banner";
 import { FC } from "react";
-import { Post } from "~/pages";
+import { Banner as HomeBanner, Post } from "~/pages";
 import { useRouter } from "next/router";
 
 export type HomeBannerProps = {
-  post: Banner;
-};
-type Banner = {
-  id: number;
-  image: string;
-  content: Post;
+  post: HomeBanner;
 };
 
 const HomeBanner: FC<HomeBannerProps> = ({ post }) => {
