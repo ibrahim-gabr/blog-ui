@@ -1,4 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Blog-UI](https://blog-ui-psi.vercel.app/) project
+
+### Technologies used
+
+- NextJS
+- TypeScript
+- Redux Toolkit
+- Tailwind CSS
+- Formik and Yup for form handling and validation
 
 ## Getting Started
 
@@ -12,23 +20,30 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Features
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- I used [Next.js API Routes](https://nextjs.org/docs/api-routes/introduction) to create backend and build fake data for the project.
+- I used [next-seo](https://github.com/garmeeh/next-seo) to handle SEO for all the pages
+- used SSR as requested and added option for caching too,
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+   res.setHeader(
+   "Cache-Control",
+   "public, s-maxage=10, stale-while-revalidate=59"
+ );
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- added a [loader](https://github.com/mhnpd/react-loader-spinner) to handle the loading state and customized it to use the branded colors form the Figma design
+- used Redux to handle state for the app, currently, the icons for changing the article font size are working and all dynamic.
+  <img src="./public/images/article_font.png" width="800" height="200" >
+- added form validation for writing comments or subscribing to newsletter ,
+  validation is working in submiting or even onBlur for all the fields.
+- there are also API Routes for simulating submitting the forms and I used [React-Toastify](https://www.npmjs.com/package/react-toastify) for displaying messages to the user accordingly.
+- added [sitemap geneator](https://www.npmjs.com/package/next-sitemap) for the project, it generates a sitemap.xml file and it includes automatically all the pages including the dynamic ones, it runs automaticaly when the project is deployed.
+- the project is using TypeScript including the API Routes.
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- The project is deployed on [Vercel](https://vercel.com/) and it is available on [Blog-UI](<(https://blog-ui-psi.vercel.app/)>).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- it is connected to this Repository, so it redeploy automatically when the code is changed.

@@ -24,7 +24,7 @@ const TextArea: FC<Props> = ({ label, type, placeholder }) => {
           className="shadow-sm focus:ring-theme-primary focus:border-theme-primary block w-full text-[#B3B9B9] text-xs border border-[#E9E9E9] rounded-sm"
         />
       </div>
-      <div className="text-red-400 font-medium flex justify-center items-center  mx-auto mt-2 py-1 text-sm">
+      <div className="text-[#a94442] font-normal flex justify-center items-center  mx-auto mt-2 py-1 text-sm">
         <ErrorMessage name={type} className="bg-red-300" />
       </div>
     </>

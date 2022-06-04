@@ -68,7 +68,7 @@ export const Newsletter = () => {
           >
             اشتراك
           </Button>
-          <div className="text-red-400 font-medium flex justify-center items-center mr-4 mx-auto mt-2 py-1 text-sm">
+          <div className="text-[#a94442] font-normal flex justify-center items-center mr-4 mx-auto mt-2 py-1 text-sm">
             <ErrorMessage name="email" className="bg-red-300" />
           </div>
         </Form>
