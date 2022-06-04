@@ -4,7 +4,8 @@ import TextArea from "./textarea";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Client from "~/utils/Client";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
+import { Button } from "../common/Button";
 
 type MyFormValues = {
   name: string;
@@ -25,13 +26,14 @@ const CommentsForm = () => {
       initialValues={initialValues}
       validationSchema={validationSchema}
       onSubmit={async (values, actions) => {
-        console.log({ values, actions });
         try {
           await Client.post("createComment", {
             comment: values,
           });
           toast.success("تم ارسال التعليق بنجاح");
-        } catch (error) {}
+        } catch (error: any) {
+          toast.error(error?.message);
+        }
         actions.setSubmitting(false);
       }}
     >
@@ -54,12 +56,13 @@ const CommentsForm = () => {
             />
           </div>
 
-          <button
+          <Button
+            btnType="primary"
             type="submit"
-            className="mt-3 sm:mt-0 w-full sm:w-[242px] inline-flex h-10 justify-center items-center px-4 py-2 border border-transparent text-sm font-normal rounded-sm shadow-sm text-white bg-theme-primary  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-theme-primary"
+            className="mt-3 sm:mt-0 w-full sm:w-[242px]"
           >
             أضف تعليقك
-          </button>
+          </Button>
         </div>
       </Form>
     </Formik>

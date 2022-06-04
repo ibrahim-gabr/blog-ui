@@ -1,6 +1,7 @@
 import React from "react";
 import { FiTwitter, FiInstagram, FiFacebook } from "react-icons/fi";
 import { GoMail } from "react-icons/go";
+import { Button } from "~/components/common/Button";
 import SocialIcon from "~/components/common/socialicon";
 
 const FooterSocial = () => {
@@ -20,9 +21,9 @@ const FooterSocial = () => {
           <FiTwitter className="w-4 h-4" />
         </SocialIcon>
       </div>
-      <button className="md:mr-4 w-44 h-10 flex items-center justify-center bg-theme-secondary text-white">
+      <Button btnType="secondary" className="md:mr-4 w-44">
         كن كاتب معنا
-      </button>
+      </Button>
     </div>
   );
 };

@@ -1,10 +1,9 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { Button } from "~/components/common/Button";
 
 const Custom404 = () => {
   const router = useRouter();
-  //               <Image src="/images/404.svg" width={275} height={275} alt="error 404" />
-
   return (
     <div className="px-4 mx-auto max-w-7xl">
       <div className="max-w-md py-32 mx-auto text-center">
@@ -25,12 +24,13 @@ const Custom404 = () => {
             إذا كان لديك أي استفسار تواصل معنا
           </p>
         </div>
-        <button
+        <Button
+          btnType="primary"
           onClick={() => router.push("/")}
-          className="block px-16 py-3 mx-auto text-center text-white rounded-sm bg-theme-primary "
+          className="block px-16 py-3 mx-auto "
         >
           الرجوع إلى الرئيسية
-        </button>
+        </Button>
       </div>
     </div>
   );
