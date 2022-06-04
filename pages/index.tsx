@@ -60,15 +60,8 @@ export type Banner = {
 const Home: FC<HomePageProps> = ({ homeData }) => {
   return (
     <div>
-      <Head>
-        <title>Blog UI</title>
-        <meta
-          name="description"
-          content="Blog UI in Arabic using Nextjs Typescript"
-        />
-      </Head>
       <NextSeo
-        title="Blog UI"
+        title="مدونه | Blog"
         description="Blog UI in Arabic using Nextjs Typescript"
         additionalMetaTags={[
           { name: "keywords", content: "blog, nextjs , typescript" },
@@ -76,7 +69,7 @@ const Home: FC<HomePageProps> = ({ homeData }) => {
         openGraph={{
           type: "website",
           url: "https://blog-ui-psi.vercel.app",
-          title: "Blog UI",
+          title: "مدونه | Blog",
           description: "Blog UI in Arabic using Nextjs Typescript",
         }}
       />

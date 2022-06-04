@@ -10,6 +10,7 @@ import ArticleTags from "~/components/articles/tags";
 import ArticleComments from "~/components/articles/comments";
 import FontControll from "~/components/articles/FontControll";
 import { useAppSelector } from "~/app/hooks";
+import { NextSeo } from "next-seo";
 
 export type ArticleProps = {
   articleData: Post;
@@ -23,6 +24,20 @@ const StudiesArticle: FC<ArticleProps> = ({ articleData, loading }) => {
 
   return (
     <div>
+      <NextSeo
+        title={articleData.title}
+        description={articleData.excerpt}
+        additionalMetaTags={[
+          { name: "keywords", content: "blog, nextjs , typescript" },
+        ]}
+        openGraph={{
+          type: "website",
+          url: "https://blog-ui-psi.vercel.app",
+          title: articleData.title,
+          description: articleData.excerpt,
+        }}
+      />
+
       {!loading && <ArticleHeader article={articleData} />}
       <Container className="py-10 mt-10">
         {postBody?.mainImage && (
