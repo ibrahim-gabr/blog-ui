@@ -1,8 +1,9 @@
 import React from "react";
 import Banner from "../common/banner";
 import { FC } from "react";
-import { Banner as HomeBanner, Post } from "~/pages";
+import { Banner as HomeBanner } from "~/pages";
 import { useRouter } from "next/router";
+import { Author, Excerpt, Title } from "../common/PostBody";
 
 export type HomeBannerProps = {
   post: HomeBanner;
@@ -22,11 +23,18 @@ const HomeBanner: FC<HomeBannerProps> = ({ post }) => {
               <span className="text-sm text-[#FAFAFA] border-r-2 border-theme-primary pr-2">
                 {post.content.subcategory}
               </span>
-              <span className="text-white text-xl">{post.content.title}</span>
-              <p className="text-[#ECEEED] text-sm">{post.content.excerpt}</p>
-              <p className="text-[#ECEEED] text-sm">
-                بواسطه {post.content.author}
-              </p>
+
+              <Title title={post.content.title} size="xl" color="white" />
+              <Excerpt
+                excerpt={post.content.excerpt}
+                size="sm"
+                color="[#ECEEED]"
+              />
+              <Author
+                author={post.content.author}
+                size="sm"
+                color="[#ECEEED]"
+              />
             </div>
           </div>
         </div>

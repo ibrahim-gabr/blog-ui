@@ -1,11 +1,8 @@
 import React from "react";
-import { useAppDispatch, useAppSelector } from "~/app/hooks";
 import FontPicker from "./FontPicker";
 
 const FontControll = () => {
-  const size = useAppSelector((state) => state.article.fontSize);
-  const active = useAppSelector((state) => state.article.activeFontSize);
-  const dispatch = useAppDispatch();
+
   return (
     <div className="bg-theme-secondary w-28 h-8.5 px-2.5 py-1.5 rounded-3xl mx-auto flex mt-5 space-x-3 space-x-reverse justify-center items-center">
       <FontPicker size="xl" type="default">

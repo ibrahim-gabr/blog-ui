@@ -1,16 +1,11 @@
 import React from "react";
 import Client from "~/utils/Client";
 import { FC } from "react";
-import Image from "next/image";
 import { GetServerSideProps } from "next";
 import { ParsedUrlQuery } from "querystring";
-import { IncomingMessage } from "http";
 import ArticleHeader from "~/components/articles/header";
 import { Post } from "..";
 import { Container } from "~/components/common/container";
-import SocialIcon from "~/components/common/socialicon";
-import { GoMail } from "react-icons/go";
-import { FiFacebook } from "react-icons/fi";
 import ArticleTags from "~/components/articles/tags";
 import ArticleComments from "~/components/articles/comments";
 import FontControll from "~/components/articles/FontControll";

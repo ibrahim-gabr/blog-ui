@@ -1,9 +1,10 @@
 import React from "react";
 import { Post } from "~/pages";
-import { FC, useEffect, useState } from "react";
+import { FC, } from "react";
 import Image from "next/image";
 import Overlay from "./overlay";
 import { useRouter } from "next/router";
+import { Author, Excerpt } from "./PostBody";
 type Props = {
   post: Post;
 };
@@ -31,12 +32,18 @@ export const CardOverlay: FC<Props> = ({ post }) => {
           <h1 className="text-lg font-normal tracking-tight text-white">
             {post.subcategory}
           </h1>
-          <p className="mt-2 text-base text-[#ECEEED] max-w-3xl">
-            {post.excerpt}
-          </p>
-          <p className="mt-2 text-sm  text-[#ECEEED] max-w-3xl">
-            بواسطه {post.author}
-          </p>
+          <Excerpt
+            excerpt={post.excerpt}
+            size="base"
+            className="mt-2 max-w-3xl"
+            color="[#ECEEED]"
+          />
+          <Author
+            author={post.author}
+            color="[#ECEEED]"
+            size="sm"
+            className="mt-2"
+          />
         </div>
       </div>
     </div>

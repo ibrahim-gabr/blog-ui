@@ -4,7 +4,7 @@ import { Container } from "../common/container";
 import MostReadHeader from "./header";
 import { FC, useEffect, useState } from "react";
 import { CardOverlay } from "../common/CardOverlay";
-import CardSideImage from "../common/CardSideImage";
+
 import Card from "../common/card";
 
 type Props = {
@@ -36,7 +36,7 @@ const MostRead: FC<Props> = ({ posts }) => {
           {posts &&
             posts
               .slice(4, 7)
-              .map((post) => <CardSideImage key={post.id} post={post} />)}
+              .map((post) => <Card sideImage key={post.id} post={post} />)}
         </div>
       </div>
     </Container>
