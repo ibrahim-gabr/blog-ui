@@ -2,7 +2,7 @@ import React from "react";
 import { Post } from "~/pages";
 import { FC, useEffect, useState } from "react";
 import Image from "next/image";
-import cn from "classNames";
+import cn from "classnames";
 
 type Props = {
   post: Post;

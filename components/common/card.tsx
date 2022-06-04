@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { FC } from "react";
 import { Post } from "~/pages";
+import NextLink from "./NextLink";
 import PostBody, { Author, Excerpt, SubCategory, Title } from "./PostBody";
 
 type CardProps = {
@@ -15,9 +16,9 @@ const Card: FC<CardProps> = ({ post, children, sideImage }) => {
   return (
     <>
       {sideImage ? (
-        <div
+        <NextLink
           className="relative flex items-center cursor-pointer"
-          onClick={() => router.push(`/studies/${post.slug}`)}
+          href={`/studies/${post.slug}`}
         >
           <div className="relative w-[150px] h-[150px] ">
             <Image
@@ -37,11 +38,11 @@ const Card: FC<CardProps> = ({ post, children, sideImage }) => {
             />
             <Author author={post.author} size="xs" />
           </div>
-        </div>
+        </NextLink>
       ) : (
-        <div
+        <NextLink
           className="flex flex-col space-y-3 cursor-pointer"
-          onClick={() => router.push(`/studies/${post.slug}`)}
+          href={`/studies/${post.slug}`}
         >
           <div className="relative h-[350px]">
             <Image
@@ -52,7 +53,7 @@ const Card: FC<CardProps> = ({ post, children, sideImage }) => {
             />
           </div>
           <PostBody post={post} />
-        </div>
+        </NextLink>
       )}
     </>
   );

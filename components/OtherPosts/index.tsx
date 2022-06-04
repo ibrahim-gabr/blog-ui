@@ -8,6 +8,7 @@ import Overlay from "../common/overlay";
 import { useRouter } from "next/router";
 import Card from "../common/card";
 import PostBody from "../common/PostBody";
+import NextLink from "../common/NextLink";
 
 type Props = {
   posts: Post[];
@@ -45,23 +46,23 @@ const OtherPosts: FC<Props> = ({ posts }) => {
           <div className="flex flex-col space-y-5 md:col-span-1">
             {posts &&
               posts.slice(4, 7).map((post, i) => (
-                <div
+                <NextLink
                   key={post.id}
-                  onClick={() => router.push(`/studies/${post.slug}`)}
+                  href={`/studies/${post.slug}`}
                   className={cn(
                     "pt-3 cursor-pointer",
                     i != 0 && "border-t-2 border-theme-light-gray"
                   )}
                 >
                   <PostBody post={post} />
-                </div>
+                </NextLink>
               ))}
           </div>
           <div className="md:col-start-2 md:col-end-4 h-[490px]">
             {featuredPost && (
-              <div
+              <NextLink
                 className="relative cursor-pointer"
-                onClick={() => router.push(`/studies/${featuredPost.slug}`)}
+                href={`/studies/${featuredPost.slug}`}
               >
                 <div className="absolute inset-0 flex justify-center h-[490px]">
                   <Image
@@ -80,15 +81,15 @@ const OtherPosts: FC<Props> = ({ posts }) => {
                     <span className="text-white text-xl">
                       {featuredPost.title}
                     </span>
-                    <p className="text-[#ECEEED] text-sm">
+                    <p className="text-theme-lily-white text-sm">
                       {featuredPost.excerpt}
                     </p>
-                    <p className="text-[#ECEEED] text-sm">
+                    <p className="text-theme-lily-white text-sm">
                       بواسطه {featuredPost.author}
                     </p>
                   </div>
                 </div>
-              </div>
+              </NextLink>
             )}
           </div>
         </div>

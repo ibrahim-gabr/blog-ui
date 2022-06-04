@@ -1,20 +1,20 @@
 import React from "react";
 import { Post } from "~/pages";
-import { FC, } from "react";
+import { FC } from "react";
 import Image from "next/image";
 import Overlay from "./overlay";
-import { useRouter } from "next/router";
 import { Author, Excerpt } from "./PostBody";
+import NextLink from "./NextLink";
 type Props = {
   post: Post;
 };
 
 export const CardOverlay: FC<Props> = ({ post }) => {
-  const router = useRouter();
+ 
   return (
-    <div
+    <NextLink
       className="relative cursor-pointer"
-      onClick={() => router.push(`/studies/${post.slug}`)}
+      href={`/studies/${post.slug}`}
     >
       <div className="absolute inset-0">
         <Image
@@ -36,16 +36,16 @@ export const CardOverlay: FC<Props> = ({ post }) => {
             excerpt={post.excerpt}
             size="base"
             className="mt-2 max-w-3xl"
-            color="[#ECEEED]"
+            color="theme-lily-white"
           />
           <Author
             author={post.author}
-            color="[#ECEEED]"
+            color="theme-lily-white"
             size="sm"
             className="mt-2"
           />
         </div>
       </div>
-    </div>
+    </NextLink>
   );
 };

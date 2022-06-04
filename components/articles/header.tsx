@@ -18,14 +18,19 @@ const ArticleHeader: FC<ArticleHeaderProps> = ({ article }) => {
     : "االمقالات";
 
   return (
-    <Banner img="/images/article_header.png">
+    <Banner img="/images/article_header.jpg">
       <div className="relative max-w-7xl mx-auto h-[260px] sm:h-[336px] px-4 sm:px-6 lg:px-8 flex flex-col items-start space-y-4  justify-center py-4">
         <Breadcrumbs title={title} />
         <div className="flex flex-col justify-end space-y-8">
-          <h1 className="text-3xl md:text-5xl md:font-bold font-normal max-w-3xl tracking-tight text-[#ECEEED]  ">
+          <h1 className="text-3xl md:text-5xl md:font-bold font-normal max-w-3xl tracking-tight text-theme-lily-white  ">
             {article?.title}
           </h1>
-          <p className="flex text-sm text-[#ECEEED]">
+          <p className="flex items-center text-sm text-theme-lily-white">
+            <img
+              className="inline-block h-8 w-8 rounded-full ml-2.5"
+              src="/images/avatar.jpg"
+              alt=""
+            />
             <span>بواسطة / </span>
             <span className="mr-1">{article?.author}</span>
             <span className="mx-2">|</span>

@@ -10,7 +10,7 @@ export type SocialIconProps = {
 const SocialIcon: FC<SocialIconProps> = ({ children, bg }) => {
   return (
     <div
-      className={`border border-[#ECEEED] rounded-2xl w-9 h-9 flex items-center justify-center bg-${
+      className={`border border-theme-lily-white rounded-2xl w-9 h-9 flex items-center justify-center bg-${
         bg && bg
       }`}
     >

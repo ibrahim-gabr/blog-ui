@@ -7,6 +7,7 @@ import { Container } from "~/components/common/container";
 import { Post } from "..";
 import { useRouter } from "next/router";
 import PostBody from "~/components/common/PostBody";
+import NextLink from "~/components/common/NextLink";
 
 export type StudiesPageProps = {
   studiesData: {
@@ -25,10 +26,10 @@ const Studies: FC<StudiesPageProps> = ({ studiesData, loading }) => {
       <div className="flex justify-center items-center flex-wrap gap-7 mt-4 py-4">
         {studiesData.posts &&
           studiesData.posts.map((post) => (
-            <div
+            <NextLink
               className="max-w-[343px] md:max-w-[370px] cursor-pointer"
               key={post.id}
-              onClick={() => router.push(`/studies/${post.slug}`)}
+              href={`/studies/${post.slug}`}
             >
               <div className="flex flex-col space-y-3">
                 <div className="relative flex justify-center h-[230px]">
@@ -41,7 +42,7 @@ const Studies: FC<StudiesPageProps> = ({ studiesData, loading }) => {
                 </div>
                 <PostBody post={post} />
               </div>
-            </div>
+            </NextLink>
           ))}
       </div>
     </Container>

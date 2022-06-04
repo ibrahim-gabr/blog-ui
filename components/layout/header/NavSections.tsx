@@ -17,7 +17,7 @@ const NavSections: FC<Props> = ({ isHomePage }) => {
   return (
     <div
       className={`hidden sm:flex items-center ${
-        isHomePage ? "text-white" : "text-[#404343]"
+        isHomePage ? "text-white" : "text-theme-light-black"
       } flex-1 justify-start mr-8`}
     >
       <div className={`${router.pathname === "/" && "active"} mx-4 pb-2`}>

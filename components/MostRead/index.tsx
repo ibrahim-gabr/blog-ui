@@ -20,26 +20,30 @@ const MostRead: FC<Props> = ({ posts }) => {
     }
   }, [posts]);
 
-  return (
-    <Container className="py-8">
-      <MostReadHeader />
-      <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-3 sm:gap-x-6">
-        {posts &&
-          posts
-            .slice(0, 3)
-            .map((post) => <CardOverlay key={post.id} post={post} />)}
-      </div>
+  const havePosts = posts && posts.length > 0;
 
-      <div className="grid grid-cols-1 md:grid-cols-2 mt-6 gap-y-10 gap-x-4  py-8">
-        {featuredPost && <Card post={featuredPost} />}
-        <div className="flex flex-col space-y-5 ">
-          {posts &&
-            posts
-              .slice(4, 7)
-              .map((post) => <Card sideImage key={post.id} post={post} />)}
-        </div>
-      </div>
-    </Container>
+  return (
+    <>
+      {havePosts && (
+        <Container className="pt-8 pb-4 sm:pb-8 sm:border-b-2 sm:border-theme-lily-white ">
+          <MostReadHeader />
+          <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-3 sm:gap-x-6">
+            {posts.slice(0, 3).map((post) => (
+              <CardOverlay key={post.id} post={post} />
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 mt-6 gap-y-10 gap-x-4  py-8">
+            {featuredPost && <Card post={featuredPost} />}
+            <div className="flex flex-col space-y-5 ">
+              {posts.slice(4, 7).map((post) => (
+                <Card sideImage key={post.id} post={post} />
+              ))}
+            </div>
+          </div>
+        </Container>
+      )}
+    </>
   );
 };
 
