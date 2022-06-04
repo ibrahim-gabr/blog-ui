@@ -7,7 +7,7 @@ import cn from "classnames";
 import Overlay from "../common/overlay";
 import { useRouter } from "next/router";
 import Card from "../common/card";
-import PostBody from "../common/PostBody";
+import PostBody, { Author, Excerpt, Title } from "../common/PostBody";
 import NextLink from "../common/NextLink";
 
 type Props = {
@@ -60,11 +60,11 @@ const OtherPosts: FC<Props> = ({ posts }) => {
           </div>
           <div className="md:col-start-2 md:col-end-4 h-[490px]">
             {featuredPost && (
-              <NextLink
-                className="relative cursor-pointer"
-                href={`/studies/${featuredPost.slug}`}
-              >
-                <div className="absolute inset-0 flex justify-center h-[490px]">
+              <div className="relative cursor-pointer">
+                <NextLink
+                  className="absolute inset-0 flex justify-center h-[490px]"
+                  href={`/studies/${featuredPost.slug}`}
+                >
                   <Image
                     src={featuredPost.image}
                     alt={featuredPost.title}
@@ -72,24 +72,26 @@ const OtherPosts: FC<Props> = ({ posts }) => {
                     layout="fill"
                   />
                   <Overlay />
-                </div>
-                <div className="relative max-w-7xl mx-auto h-[500px]  sm:h-[500px] px-4 sm:px-6 lg:px-8 flex items-end py-8">
+                </NextLink>
+                <div className="relative max-w-7xl mx-auto h-[500px] sm:h-[500px] px-4 sm:px-6 lg:px-8 flex items-end py-8">
                   <div className="flex flex-col space-y-3">
                     <span className="text-sm text-[#FAFAFA] border-r-2 border-theme-primary pr-2">
                       {featuredPost.subcategory}
                     </span>
-                    <span className="text-white text-xl">
-                      {featuredPost.title}
-                    </span>
-                    <p className="text-theme-lily-white text-sm">
-                      {featuredPost.excerpt}
-                    </p>
-                    <p className="text-theme-lily-white text-sm">
-                      بواسطه {featuredPost.author}
-                    </p>
+                    <Title title={featuredPost.title} size="xl" color="white" />
+                    <Excerpt
+                      excerpt={featuredPost.excerpt}
+                      size="sm"
+                      color="theme-lily-white"
+                    />
+                    <Author
+                      author={featuredPost.author}
+                      size="sm"
+                      color="theme-lily-white"
+                    />
                   </div>
                 </div>
-              </NextLink>
+              </div>
             )}
           </div>
         </div>

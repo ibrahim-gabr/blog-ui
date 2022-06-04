@@ -35,12 +35,21 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 - added a [loader](https://github.com/mhnpd/react-loader-spinner) to handle the loading state and customized it to use the branded colors form the Figma design
 - used Redux to handle state for the app, currently, the icons for changing the article font size are working and all dynamic.
-  <img src="./public/images/article_font.png" width="800" height="200" >
+  <img src="./public/images/article_font.png" style="width:800px;height:300px;" >
 - added form validation for writing comments or subscribing to newsletter ,
   validation is working in submiting or even onBlur for all the fields.
 - there are also API Routes for simulating submitting the forms and I used [React-Toastify](https://www.npmjs.com/package/react-toastify) for displaying messages to the user accordingly.
 - added [sitemap geneator](https://www.npmjs.com/package/next-sitemap) for the project, it generates a sitemap.xml file and it includes automatically all the pages including the dynamic ones, it runs automaticaly when the project is deployed.
 - the project is using TypeScript including the API Routes.
+- there is a delay with sleep to simulate semi-reall API calls,
+
+```bash
+await new Promise((resolve) => setTimeout(resolve, 100));
+```
+
+### GTmetrix
+
+<img src="public/images/gtmetrix.png" style="width:800px;height:300px;" >
 
 ## Deploy on Vercel
 
