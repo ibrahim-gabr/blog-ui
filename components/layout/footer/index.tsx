@@ -6,8 +6,8 @@ import { Newsletter } from "../Newsletter";
 const Footer = () => {
   return (
     <>
-      <div className="flex flex-col  w-full  bg-white">
-      <Newsletter />
+      <footer className="flex flex-col  w-full  bg-white">
+        <Newsletter />
         <Container className="py-4">
           <div className="flex flex-col md:flex-row space-y-4 justify-center md:justify-between items-center md:space-y-0 w-full">
             <div className="order-first md:order-2">
@@ -21,7 +21,7 @@ const Footer = () => {
             </div>
           </div>
         </Container>
-      </div>
+      </footer>
     </>
   );
 };

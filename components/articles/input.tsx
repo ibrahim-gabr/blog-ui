@@ -9,7 +9,7 @@ const Input: FC<Props> = ({ label, type, placeholder }) => {
   return (
     <div className="">
       <label
-        htmlFor="name"
+        htmlFor={type}
         className="block text-sm font-normal text-[#202221]            "
       >
         {label}

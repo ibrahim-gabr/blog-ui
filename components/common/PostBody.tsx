@@ -76,14 +76,14 @@ export const SubCategory: FC<{
 
 const PostBody: FC<Props> = ({ post }) => {
   return (
-    <>
+    <article>
       <SubCategory subcategory={post.subcategory} size="sm" />
-      <div className="flex flex-col space-y-3">
+      <section className="flex flex-col space-y-3">
         <Title title={post.title} size="xl" />
         <Excerpt excerpt={post.excerpt} size="sm" />
         <Author author={post.author} size="sm" />
-      </div>
-    </>
+      </section>
+    </article>
   );
 };
 

@@ -15,7 +15,7 @@ const NavSections: FC<Props> = ({ isHomePage }) => {
   const router = useRouter();
 
   return (
-    <div
+    <nav
       className={`hidden sm:flex items-center ${
         isHomePage ? "text-white" : "text-theme-light-black"
       } flex-1 justify-start mr-8`}
@@ -38,7 +38,7 @@ const NavSections: FC<Props> = ({ isHomePage }) => {
           </Link>
         </div>
       ))}
-    </div>
+    </nav>
   );
 };
 

@@ -21,7 +21,7 @@ export const Button = ({
   return (
     <button
       className={cn(
-        "h-10 py-2 px-4 text-sm border border-transparent focus:outline-none font-normal rounded-sm shadow-sm focus:ring-2 focus:ring-offset-2 flex items-center justify-center",
+        "h-10 py-2 px-4 text-sm border border-transparent focus:outline-none font-normal rounded-sm shadow-sm focus:ring-2 focus:ring-offset-2 flex items-center justify-center transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 ",
         btnType === "primary" &&
           "bg-theme-primary text-white focus:ring-theme-primary",
         btnType === "secondary" &&

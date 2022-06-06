@@ -35,9 +35,9 @@ const Studies: FC<StudiesPageProps> = ({ studiesData, loading }) => {
         }}
       />
       <Container>
-        <div className="flex items-center justify-center">
+        <header className="flex items-center justify-center">
           <h1 className="text-3xl sm:text-4xl">التقارير والدراسات</h1>
-        </div>
+        </header>
         <div className="flex justify-center items-center flex-wrap gap-7 mt-4 py-4">
           {studiesData.posts &&
             studiesData.posts.map((post) => (

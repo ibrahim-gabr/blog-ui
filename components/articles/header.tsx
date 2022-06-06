@@ -35,7 +35,7 @@ const ArticleHeader: FC<ArticleHeaderProps> = ({ article }) => {
             <span className="mr-1">{article?.author}</span>
             <span className="mx-2">|</span>
             <span className="ml-2">منذ</span>
-            <span>{moment(article?.created_at).format("DD/MM/YYYY")}</span>
+            <time>{moment(article?.created_at).format("DD/MM/YYYY")}</time>
           </p>
         </div>
       </div>

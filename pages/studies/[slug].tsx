@@ -48,10 +48,12 @@ const StudiesArticle: FC<ArticleProps> = ({ articleData, loading }) => {
           />
         )}
         <FontControll />
-        <div className="flex flex-col space-y-7">
+        <article className="flex flex-col space-y-7">
           {postBody?.sections.map((section) => (
-            <div key={section.id} className="flex flex-col space-y-7 ">
-              <h2 className={`text-${size.title}`}>{section.title}</h2>
+            <section key={section.id} className="flex flex-col space-y-7 ">
+              {section.title && (
+                <h2 className={`text-${size.title}`}>{section.title}</h2>
+              )}
 
               {section?.image && (
                 <img
@@ -71,14 +73,14 @@ const StudiesArticle: FC<ArticleProps> = ({ articleData, loading }) => {
                   </p>
                 ))}
               </div>
-            </div>
+            </section>
           ))}
 
           <ArticleTags tags={articleData.tags} />
           {postBody?.comments && !loading && (
             <ArticleComments comments={postBody?.comments} />
           )}
-        </div>
+        </article>
       </Container>
     </div>
   );

@@ -73,14 +73,18 @@ const Home: FC<HomePageProps> = ({ homeData }) => {
           description: "Blog UI in Arabic using Nextjs Typescript",
         }}
       />
-
-      <main>
+      <section id="showcase">
         <Showcase banner={homeData.topBanner} />
+      </section>
+      <section id="most-rread">
         <MostRead posts={homeData.most_read} />
+      </section>
+      <section id="home-slider">
         <HomeBanner post={homeData.banner} />
-        {/* other posts */}
+      </section>
+      <section id="other-posts">
         <OtherPosts posts={homeData.posts} />
-      </main>
+      </section>
     </div>
   );
 };

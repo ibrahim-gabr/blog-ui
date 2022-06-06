@@ -13,14 +13,14 @@ export type TagsProps = {
 const ArticleComments: FC<TagsProps> = ({ comments }) => {
   return (
     <Container>
-      <div className="flex flex-col space-y-5  py-5  ">
-        <div className="flex justify-start border-theme-primary pr-4 border-r-2 text-lg">
+      <section className="flex flex-col space-y-5  py-5  ">
+        <h2 className="flex justify-start border-theme-primary pr-4 border-r-2 text-lg">
           التعليقات
           <span className="mr-1">( {comments?.length} )</span>
-        </div>
+        </h2>
         <div className="flex flex-col space-y-2.5">
           {comments?.map((comment, idx) => (
-            <div
+            <section
               key={comment.id}
               className={cn(
                 "flex flex-col space-y-3 py-2.5",
@@ -39,10 +39,10 @@ const ArticleComments: FC<TagsProps> = ({ comments }) => {
               <span className="text-sm text-[#606564] leading-5">
                 {comment?.content}
               </span>
-            </div>
+            </section>
           ))}
         </div>
-      </div>
+      </section>
       <div>
         <div className="flex justify-start border-theme-primary pr-4 border-r-2 text-lg">
           كن اول من يعلق
